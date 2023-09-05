@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:UnitConverter.xcodeproj">
+      location = "group:3-GuessTheFlag/GuessTheFlag.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:WeSplit.xcodeproj">
+      location = "group:2-UnitConverter/UnitConverter.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:1-WeSplit/WeSplit.xcodeproj">
    </FileRef>
 </Workspace>
