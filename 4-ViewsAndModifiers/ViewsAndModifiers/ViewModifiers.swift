@@ -1,5 +1,5 @@
 //
-//  CustomModifier.swift
+//  ViewModifiers.swift
 //  ViewsAndModifiers
 //
 //  Created by Eray Diler on 11.09.2023.
