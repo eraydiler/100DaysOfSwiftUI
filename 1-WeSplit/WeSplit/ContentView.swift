@@ -10,7 +10,6 @@
   https://www.hackingwithswift.com/100/swiftui/18
 */
 
-
 import SwiftUI
 
 struct ContentView: View {

@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+/*
+  Day20-22: Project 2
+  https://www.hackingwithswift.com/100/swiftui/22
+*/
+
 struct ContentView: View {
     @State private var showingScoreAlert = false
     @State private var scoreAlertTitle = ""

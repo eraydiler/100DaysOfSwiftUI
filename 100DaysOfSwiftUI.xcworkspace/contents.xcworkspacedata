@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:5-RockPaperScissors/RockPaperScissors.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:4-ViewsAndModifiers/ViewsAndModifiers.xcodeproj">
    </FileRef>
    <FileRef

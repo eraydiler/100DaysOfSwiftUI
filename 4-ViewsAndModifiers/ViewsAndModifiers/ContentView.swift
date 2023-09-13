@@ -5,6 +5,11 @@
 //  Created by Eray Diler on 8.09.2023.
 //
 
+/*
+  Day23-24: Project 3
+  https://www.hackingwithswift.com/100/swiftui/24
+*/
+
 import SwiftUI
 
 struct ContentView: View {
