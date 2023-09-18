@@ -7,7 +7,7 @@
 
 /*
   Day26-28: Project 4
-  https://www.hackingwithswift.com/100/swiftui/28
+  https://www.hackingwithswift.com/100/swiftui/(26...28)
 */
 
 import CoreML

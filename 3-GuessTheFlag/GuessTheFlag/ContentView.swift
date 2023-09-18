@@ -9,7 +9,7 @@ import SwiftUI
 
 /*
   Day20-22: Project 2
-  https://www.hackingwithswift.com/100/swiftui/22
+  https://www.hackingwithswift.com/100/swiftui/(20...22)
 */
 
 struct ContentView: View {

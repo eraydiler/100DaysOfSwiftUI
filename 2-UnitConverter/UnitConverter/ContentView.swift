@@ -7,7 +7,7 @@
 
 /*
   Day19: Challenge 1
-  https://www.hackingwithswift.com/100/swiftui/18
+  https://www.hackingwithswift.com/100/swiftui/19
 */
 
 import SwiftUI

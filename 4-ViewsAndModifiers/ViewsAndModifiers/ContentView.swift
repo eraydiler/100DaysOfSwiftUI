@@ -7,7 +7,7 @@
 
 /*
   Day23-24: Project 3
-  https://www.hackingwithswift.com/100/swiftui/24
+  https://www.hackingwithswift.com/100/swiftui/(23...24)
 */
 
 import SwiftUI
