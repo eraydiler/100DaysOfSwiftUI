@@ -27,13 +27,8 @@ struct BedtimeCalculator {
             )
 
             return wakeUpTime - prediction.actualSleep
-//            alertTitle = "Your ideal bedtime is"
-//            alertMessage = "\(predictedSleepTime.formatted(date: .omitted, time: .shortened))"
-//            showAlert = true
         } catch {
             throw error
-//            alertTitle = "Error"
-//            alertMessage = "\(error.localizedDescription)"
         }
     }
 }

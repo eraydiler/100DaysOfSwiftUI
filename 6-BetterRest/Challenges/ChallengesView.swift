@@ -1,5 +1,5 @@
 //
-//  1.swift
+//  ChallengesView.swift
 //  BetterRest
 //
 //  Created by Eray Diler on 18.09.2023.
