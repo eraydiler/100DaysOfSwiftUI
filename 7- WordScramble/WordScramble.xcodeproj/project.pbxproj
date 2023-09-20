@@ -11,6 +11,10 @@
 		F9009CC92AB8B6FB0011E99F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9009CC82AB8B6FB0011E99F /* ContentView.swift */; };
 		F9009CCB2AB8B6FC0011E99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9009CCA2AB8B6FC0011E99F /* Assets.xcassets */; };
 		F9009CCE2AB8B6FC0011E99F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9009CCD2AB8B6FC0011E99F /* Preview Assets.xcassets */; };
+		F91E314A2ABA00A9006E122B /* Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E31492ABA00A9006E122B /* Lists.swift */; };
+		F91E314C2ABA015D006E122B /* Strings.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E314B2ABA015D006E122B /* Strings.swift.swift */; };
+		F9D50B592ABB25FF00A9DEB6 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9D50B582ABB25FE00A9DEB6 /* start.txt */; };
+		F9D50B5C2ABB3F8F00A9DEB6 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D50B5B2ABB3F8F00A9DEB6 /* ChallengesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		F9009CC82AB8B6FB0011E99F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F9009CCA2AB8B6FC0011E99F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9009CCD2AB8B6FC0011E99F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F91E31492ABA00A9006E122B /* Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lists.swift; sourceTree = "<group>"; };
+		F91E314B2ABA015D006E122B /* Strings.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift.swift; sourceTree = "<group>"; };
+		F9D50B582ABB25FE00A9DEB6 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
+		F9D50B5B2ABB3F8F00A9DEB6 /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,11 @@
 		F9009CC52AB8B6FB0011E99F /* WordScramble */ = {
 			isa = PBXGroup;
 			children = (
+				F91E31482ABA0018006E122B /* Practices */,
+				F9D50B5A2ABB3F7500A9DEB6 /* Challenges */,
 				F9009CC62AB8B6FB0011E99F /* WordScrambleApp.swift */,
 				F9009CC82AB8B6FB0011E99F /* ContentView.swift */,
+				F9D50B582ABB25FE00A9DEB6 /* start.txt */,
 				F9009CCA2AB8B6FC0011E99F /* Assets.xcassets */,
 				F9009CCC2AB8B6FC0011E99F /* Preview Content */,
 			);
@@ -65,6 +76,23 @@
 				F9009CCD2AB8B6FC0011E99F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F91E31482ABA0018006E122B /* Practices */ = {
+			isa = PBXGroup;
+			children = (
+				F91E31492ABA00A9006E122B /* Lists.swift */,
+				F91E314B2ABA015D006E122B /* Strings.swift.swift */,
+			);
+			path = Practices;
+			sourceTree = "<group>";
+		};
+		F9D50B5A2ABB3F7500A9DEB6 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				F9D50B5B2ABB3F8F00A9DEB6 /* ChallengesView.swift */,
+			);
+			path = Challenges;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9009CCE2AB8B6FC0011E99F /* Preview Assets.xcassets in Resources */,
+				F9D50B592ABB25FF00A9DEB6 /* start.txt in Resources */,
 				F9009CCB2AB8B6FC0011E99F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9D50B5C2ABB3F8F00A9DEB6 /* ChallengesView.swift in Sources */,
 				F9009CC92AB8B6FB0011E99F /* ContentView.swift in Sources */,
+				F91E314C2ABA015D006E122B /* Strings.swift.swift in Sources */,
+				F91E314A2ABA00A9006E122B /* Lists.swift in Sources */,
 				F9009CC72AB8B6FB0011E99F /* WordScrambleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

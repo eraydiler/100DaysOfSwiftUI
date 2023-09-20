@@ -1,18 +1,24 @@
 //
-//  ContentView.swift
+//  ChallengesView.swift
 //  WordScramble
 //
-//  Created by Eray Diler on 18.09.2023.
+//  Created by Eray Diler on 20.09.2023.
 //
-
-/*
- Day29-31: Project 5
- https://www.hackingwithswift.com/100/swiftui/(29...31)
- */
 
 import SwiftUI
 
-struct ContentView: View {
+/*
+
+ https://www.hackingwithswift.com/books/ios-swiftui/word-scramble-wrap-up
+
+ 1. Disallow answers that are shorter than three letters or are just our start word.
+ 2. Add a toolbar button that calls startGame(), so users can restart with a new word whenever they want to.
+ 3. Put a text view somewhere so you can track and show the player’s score for a given root word.
+    How you calculate score is down to you, but something involving number of words and their letter count would be reasonable.
+
+ */
+
+struct ChallengesView: View {
     @State private var rootWord = ""
     @State private var newWord = ""
     @State private var usedWords = [String]()
@@ -21,6 +27,10 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showError = false
 
+    private var score: Int {
+        return usedWords.reduce(0) { $0 + $1.count + 1 }
+    }
+
     var body: some View {
         NavigationView {
             List {
@@ -28,6 +38,12 @@ struct ContentView: View {
                     TextField("new word", text: $newWord)
                         .autocapitalization(.none)
                         .autocorrectionDisabled()
+                } header: {
+                    HStack {
+                        Spacer()
+                        Text("Score: ")
+                        Text(score, format: .number)
+                    }
                 }
                 Section {
                     ForEach(usedWords, id: \.self) {
@@ -35,26 +51,23 @@ struct ContentView: View {
                     }
                 }
             }
-            .alert(
-                errorTitle,
-                isPresented: $showError,
-                actions: {
-                    Button("OK", role: .cancel, action: { } )
-                },
-                message: {
-                    Text(errorMessage)
-                }
-            )
-
             .navigationTitle(rootWord)
+            .toolbar {
+                Button("Restart", action: restartGame)
+            }
             .onAppear(perform: startGame)
             .onSubmit(addNewWord)
             .submitLabel(.done)
+            .alert(errorTitle, isPresented: $showError) {
+                Button("OK", role: .cancel, action: { } )
+            } message: {
+                Text(errorMessage)
+            }
         }
     }
 }
 
-extension ContentView {
+extension ChallengesView {
     private func startGame() {
         guard
             let fileURL = Bundle.main.url(forResource: "start", withExtension: "txt"),
@@ -69,19 +82,35 @@ extension ContentView {
         rootWord = word
     }
 
+    private func restartGame() {
+        startGame()
+        newWord = ""
+        usedWords.removeAll()
+    }
+
     private func addNewWord() {
+        guard isNotRootWord() else {
+            showError(title: "Same word!", message: "The word must be different from the start word!")
+            return
+        }
+
+        guard isLongEnough() else {
+            showError(title: "Short word!", message: "The word must have at least 3 letters!")
+            return
+        }
+
         guard !isUsedBefore() else {
-            showError(title: "Used word", message: "You already used \(newWord)")
+            showError(title: "Used word!", message: "You already used \(newWord)!")
             return
         }
 
         guard isNotMisspelling() else {
-            showError(title: "Misspelling word", message: "You can't just make them up, you know!")
+            showError(title: "Misspelling word!", message: "You can't just make them up, you know!")
             return
         }
 
         guard isValid() else {
-            showError(title: "Invalid Word", message: "You can't spell that word from '\(rootWord)'!")
+            showError(title: "Invalid word!", message: "You can't spell that word from '\(rootWord)'!")
             return
         }
 
@@ -89,6 +118,14 @@ extension ContentView {
             usedWords.append(newWord.lowercased())
         }
         newWord = ""
+    }
+
+    private func isNotRootWord() -> Bool {
+        return newWord != rootWord
+    }
+
+    private func isLongEnough() -> Bool {
+        return newWord.count >= 3
     }
 
     private func isUsedBefore() -> Bool {
@@ -130,5 +167,5 @@ extension ContentView {
 }
 
 #Preview {
-    ContentView()
+    ChallengesView()
 }

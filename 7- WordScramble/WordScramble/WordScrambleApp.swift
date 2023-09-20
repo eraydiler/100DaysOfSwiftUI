@@ -11,7 +11,7 @@ import SwiftUI
 struct WordScrambleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ChallengesView()
         }
     }
 }
