@@ -143,13 +143,9 @@ struct ContentView: View {
     }
 
     private func askQuestion() {
-//        if isGameOver {
-//            reset()
-//        } else {
-            countries.shuffle()
-            correctAnswer = Int.random(in: 0...2)
-            numberOfQuestionAsked += 1
-//        }
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
+        numberOfQuestionAsked += 1
     }
 }
 
