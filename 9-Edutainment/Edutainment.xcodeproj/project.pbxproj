@@ -11,6 +11,9 @@
 		F93621BA2AC342C200F8741B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93621B92AC342C200F8741B /* ContentView.swift */; };
 		F93621BC2AC342C300F8741B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93621BB2AC342C300F8741B /* Assets.xcassets */; };
 		F93621BF2AC342C300F8741B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93621BE2AC342C300F8741B /* Preview Assets.xcassets */; };
+		F984606B2AC5F1580056FE2F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F984606A2AC5F1580056FE2F /* SettingsView.swift */; };
+		F984606D2AC5F2150056FE2F /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F984606C2AC5F2150056FE2F /* QuestionView.swift */; };
+		F984606F2AC5F22F0056FE2F /* SubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F984606E2AC5F22F0056FE2F /* SubmitView.swift */; };
 		F9CDCE2B2AC491AC002B33A5 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CDCE2A2AC491AC002B33A5 /* Question.swift */; };
 		F9CDCE2D2AC491C2002B33A5 /* QuestionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CDCE2C2AC491C2002B33A5 /* QuestionsFactory.swift */; };
 /* End PBXBuildFile section */
@@ -21,6 +24,9 @@
 		F93621B92AC342C200F8741B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F93621BB2AC342C300F8741B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F93621BE2AC342C300F8741B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F984606A2AC5F1580056FE2F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F984606C2AC5F2150056FE2F /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		F984606E2AC5F22F0056FE2F /* SubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitView.swift; sourceTree = "<group>"; };
 		F9CDCE2A2AC491AC002B33A5 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		F9CDCE2C2AC491C2002B33A5 /* QuestionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,10 +61,10 @@
 		F93621B62AC342C200F8741B /* Edutainment */ = {
 			isa = PBXGroup;
 			children = (
+				F98460692AC5F13D0056FE2F /* Models */,
+				F98460682AC5F1350056FE2F /* Views */,
 				F93621B72AC342C200F8741B /* EdutainmentApp.swift */,
 				F93621B92AC342C200F8741B /* ContentView.swift */,
-				F9CDCE2C2AC491C2002B33A5 /* QuestionsFactory.swift */,
-				F9CDCE2A2AC491AC002B33A5 /* Question.swift */,
 				F93621BB2AC342C300F8741B /* Assets.xcassets */,
 				F93621BD2AC342C300F8741B /* Preview Content */,
 			);
@@ -71,6 +77,25 @@
 				F93621BE2AC342C300F8741B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F98460682AC5F1350056FE2F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F984606A2AC5F1580056FE2F /* SettingsView.swift */,
+				F984606C2AC5F2150056FE2F /* QuestionView.swift */,
+				F984606E2AC5F22F0056FE2F /* SubmitView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F98460692AC5F13D0056FE2F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F9CDCE2C2AC491C2002B33A5 /* QuestionsFactory.swift */,
+				F9CDCE2A2AC491AC002B33A5 /* Question.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F984606B2AC5F1580056FE2F /* SettingsView.swift in Sources */,
 				F9CDCE2D2AC491C2002B33A5 /* QuestionsFactory.swift in Sources */,
 				F9CDCE2B2AC491AC002B33A5 /* Question.swift in Sources */,
 				F93621BA2AC342C200F8741B /* ContentView.swift in Sources */,
+				F984606D2AC5F2150056FE2F /* QuestionView.swift in Sources */,
+				F984606F2AC5F22F0056FE2F /* SubmitView.swift in Sources */,
 				F93621B82AC342C200F8741B /* EdutainmentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
