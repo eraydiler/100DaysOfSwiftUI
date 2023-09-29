@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F96815F02AC743060085EC70 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96815EF2AC743060085EC70 /* State.swift */; };
+		F96815F22AC743670085EC70 /* StateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96815F12AC743670085EC70 /* StateObject.swift */; };
+		F96815F42AC74EF50085EC70 /* ShowingHidingSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96815F32AC74EF50085EC70 /* ShowingHidingSheets.swift */; };
+		F96815F62AC750000085EC70 /* OnDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96815F52AC750000085EC70 /* OnDelete.swift */; };
+		F96815F82AC751BA0085EC70 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96815F72AC751BA0085EC70 /* UserDefaults.swift */; };
+		F96815FA2AC752850085EC70 /* Archiving.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96815F92AC752850085EC70 /* Archiving.swift */; };
 		F984607D2AC5FDF40056FE2F /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F984607C2AC5FDF40056FE2F /* iExpenseApp.swift */; };
 		F984607F2AC5FDF40056FE2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F984607E2AC5FDF40056FE2F /* ContentView.swift */; };
 		F98460812AC5FDF50056FE2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98460802AC5FDF50056FE2F /* Assets.xcassets */; };
@@ -14,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F96815EF2AC743060085EC70 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		F96815F12AC743670085EC70 /* StateObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateObject.swift; sourceTree = "<group>"; };
+		F96815F32AC74EF50085EC70 /* ShowingHidingSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingHidingSheets.swift; sourceTree = "<group>"; };
+		F96815F52AC750000085EC70 /* OnDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDelete.swift; sourceTree = "<group>"; };
+		F96815F72AC751BA0085EC70 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		F96815F92AC752850085EC70 /* Archiving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archiving.swift; sourceTree = "<group>"; };
 		F98460792AC5FDF40056FE2F /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F984607C2AC5FDF40056FE2F /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		F984607E2AC5FDF40056FE2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +44,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F96815EE2AC742B20085EC70 /* Practices */ = {
+			isa = PBXGroup;
+			children = (
+				F96815EF2AC743060085EC70 /* State.swift */,
+				F96815F12AC743670085EC70 /* StateObject.swift */,
+				F96815F32AC74EF50085EC70 /* ShowingHidingSheets.swift */,
+				F96815F52AC750000085EC70 /* OnDelete.swift */,
+				F96815F72AC751BA0085EC70 /* UserDefaults.swift */,
+				F96815F92AC752850085EC70 /* Archiving.swift */,
+			);
+			path = Practices;
+			sourceTree = "<group>";
+		};
 		F98460702AC5FDF40056FE2F = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +76,7 @@
 		F984607B2AC5FDF40056FE2F /* iExpense */ = {
 			isa = PBXGroup;
 			children = (
+				F96815EE2AC742B20085EC70 /* Practices */,
 				F984607C2AC5FDF40056FE2F /* iExpenseApp.swift */,
 				F984607E2AC5FDF40056FE2F /* ContentView.swift */,
 				F98460802AC5FDF50056FE2F /* Assets.xcassets */,
@@ -139,6 +165,12 @@
 			files = (
 				F984607F2AC5FDF40056FE2F /* ContentView.swift in Sources */,
 				F984607D2AC5FDF40056FE2F /* iExpenseApp.swift in Sources */,
+				F96815F62AC750000085EC70 /* OnDelete.swift in Sources */,
+				F96815F02AC743060085EC70 /* State.swift in Sources */,
+				F96815F22AC743670085EC70 /* StateObject.swift in Sources */,
+				F96815FA2AC752850085EC70 /* Archiving.swift in Sources */,
+				F96815F82AC751BA0085EC70 /* UserDefaults.swift in Sources */,
+				F96815F42AC74EF50085EC70 /* ShowingHidingSheets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
