@@ -20,6 +20,7 @@
 		F9F04E7E2AC9F5110057A433 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F04E7D2AC9F5110057A433 /* AddView.swift */; };
 		F9F04E802AC9F52D0057A433 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F04E7F2AC9F52D0057A433 /* ExpenseItem.swift */; };
 		F9F04E822AC9F5380057A433 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F04E812AC9F5380057A433 /* Expenses.swift */; };
+		F9F04E852ACA008D0057A433 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F04E842ACA008D0057A433 /* ChallengeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		F9F04E7D2AC9F5110057A433 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		F9F04E7F2AC9F52D0057A433 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		F9F04E812AC9F5380057A433 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		F9F04E842ACA008D0057A433 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F96815EE2AC742B20085EC70 /* Practices */,
+				F9F04E832ACA006C0057A433 /* Challenge */,
 				F984607C2AC5FDF40056FE2F /* iExpenseApp.swift */,
 				F984607E2AC5FDF40056FE2F /* ContentView.swift */,
 				F9F04E7D2AC9F5110057A433 /* AddView.swift */,
@@ -100,6 +103,14 @@
 				F98460832AC5FDF50056FE2F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F9F04E832ACA006C0057A433 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				F9F04E842ACA008D0057A433 /* ChallengeView.swift */,
+			);
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 				F96815F02AC743060085EC70 /* State.swift in Sources */,
 				F96815F22AC743670085EC70 /* StateObject.swift in Sources */,
 				F96815FA2AC752850085EC70 /* Archiving.swift in Sources */,
+				F9F04E852ACA008D0057A433 /* ChallengeView.swift in Sources */,
 				F9F04E802AC9F52D0057A433 /* ExpenseItem.swift in Sources */,
 				F96815F82AC751BA0085EC70 /* UserDefaults.swift in Sources */,
 				F96815F42AC74EF50085EC70 /* ShowingHidingSheets.swift in Sources */,

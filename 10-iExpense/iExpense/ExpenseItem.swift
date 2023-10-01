@@ -14,3 +14,6 @@ struct ExpenseItem: Identifiable, Codable {
     let amount: Double
 }
 
+extension ExpenseItem {
+    static let types = ["Business", "Personal"]
+}

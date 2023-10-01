@@ -26,4 +26,23 @@ class Expenses: ObservableObject {
             self.items = []
         }
     }
+
+    var groups: [Group] {
+        let dictionary = Dictionary(grouping: items, by: { $0.type }).sorted { $0.key < $1.key }
+        var newGroup: [Group] = []
+        for (type, items) in dictionary {
+            newGroup.append(
+                Group(title: type, items: items)
+            )
+        }
+
+        return newGroup
+    }
+}
+
+extension Expenses {
+    struct Group {
+        let title: String
+        let items: [ExpenseItem]
+    }
 }
