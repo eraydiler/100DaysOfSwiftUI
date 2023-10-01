@@ -13,6 +13,8 @@ fileprivate class User: ObservableObject {
 }
 
 struct StateObjectView: View {
+
+    /// NOTE: @StateObject is used when creating a class instance
     @StateObject private var user = User()
 
     var body: some View {
@@ -21,6 +23,8 @@ struct StateObjectView: View {
 }
 
 struct StateObjectInnerView: View {
+
+    /// NOTE: @ObservedObject is reused an existing class instance
     @ObservedObject fileprivate var user: User
 
     var body: some View {
