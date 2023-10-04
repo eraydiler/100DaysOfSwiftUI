@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MissionListView.swift
 //  Moonshot
 //
 //  Created by Eray Diler on 1.10.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MissionListView: View {
     let astranouts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
     let missions: [Mission] = Bundle.main.decode("missions.json")
 
@@ -19,7 +19,7 @@ struct ContentView: View {
                 LazyVGrid(columns: columns) {
                     ForEach(missions) { mission in
                         NavigationLink {
-                            // Detail
+                            MissionDetailView(mission: mission, astronauts: astranouts)
                         } label: {
                             VStack {
                                 Image(mission.image)
@@ -57,5 +57,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MissionListView()
 }
