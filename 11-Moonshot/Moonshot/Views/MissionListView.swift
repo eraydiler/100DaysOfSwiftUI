@@ -8,51 +8,131 @@
 import SwiftUI
 
 struct MissionListView: View {
-    let astranouts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
-    let missions: [Mission] = Bundle.main.decode("missions.json")
+    private enum DisplayMode {
+        case grid, list
+        
+        mutating func toggle() {
+            if self == .grid {
+                self = .list
+            } else {
+                self = .grid
+            }
+        }
+    }
 
-    private let columns = [GridItem(.adaptive(minimum: 150))]
+    @State private var displayMode: DisplayMode = .list
+
+    private let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+    private let missions: [Mission] = Bundle.main.decode("missions.json")
 
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: columns) {
-                    ForEach(missions) { mission in
-                        NavigationLink {
-                            MissionDetailView(mission: mission, astronauts: astranouts)
-                        } label: {
-                            VStack {
-                                Image(mission.image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 100)
-                                    .padding()
-                                VStack {
-                                    Text(mission.displayName)
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                    Text(mission.formattedLaunchDate)
-                                        .font(.caption)
-                                        .foregroundColor(.white.opacity(0.5))
-                                }
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(.lightBackground)
-                            }
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(.lightBackground)
-                            }
-                        }
-                    }
+                if displayMode == .grid {
+                    GridListView(missions: missions, astronauts: astronauts)
+                } else {
+                    ListView(missions: missions, astronauts: astronauts)
                 }
-                .padding()
             }
             .navigationTitle("Moonshot")
             .background(.darkBackground)
             .preferredColorScheme(.dark)
+            .toolbar {
+                Button("") {
+                    displayMode.toggle()
+                }
+                .buttonStyle(
+                    NavBarButton(
+                        systemImage: displayMode == .grid ? "list.bullet" : "circle.grid.2x2"
+                    )
+                )
+            }
         }
+    }
+    
+    fileprivate struct GridListView: View {
+        fileprivate let missions: [Mission]
+        fileprivate let astronauts: [String: Astronaut]
+        private let columns = [GridItem(.adaptive(minimum: 150))]
+
+        var body: some View {
+            LazyVGrid(columns: columns) {
+                ForEach(missions) { mission in
+                    NavigationLink {
+                        MissionDetailView(mission: mission, astronauts: astronauts)
+                    } label: {
+                        MissionView(
+                            image: mission.image,
+                            displayName: mission.displayName,
+                            launchDate: mission.formattedLaunchDate
+                        )
+                    }
+                }
+            }
+            .padding()
+        }
+    }
+
+    fileprivate struct ListView: View {
+        fileprivate let missions: [Mission]
+        fileprivate let astronauts: [String: Astronaut]
+
+        var body: some View {
+            LazyVStack(spacing: 10) {
+                ForEach(missions) { mission in
+                    NavigationLink {
+                        MissionDetailView(mission: mission, astronauts: astronauts)
+                    } label: {
+                        MissionView(
+                            image: mission.image,
+                            displayName: mission.displayName,
+                            launchDate: mission.formattedLaunchDate
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    fileprivate struct MissionView: View {
+        let image: String
+        let displayName: String
+        let launchDate: String
+
+        var body: some View {
+            VStack {
+                Image(image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                    .padding()
+                VStack {
+                    Text(displayName)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                    Text(launchDate)
+                        .font(.caption)
+                        .foregroundColor(.white.opacity(0.5))
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(.lightBackground)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .overlay {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(.lightBackground)
+            }
+        }
+    }
+}
+
+struct NavBarButton: ButtonStyle {
+    var systemImage: String = ""
+
+    func makeBody(configuration: Configuration) -> some View {
+        Image(systemName: systemImage)
+            .foregroundStyle(.white)
     }
 }
 

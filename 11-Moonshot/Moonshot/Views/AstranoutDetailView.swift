@@ -15,7 +15,7 @@ struct AstranoutDetailView: View {
             VStack {
                 Image(astronaut.id)
                     .resizable()
-                    .scaledToFit()
+                    .aspectRatio(contentMode: .fit)
 
                 Text(astronaut.description)
                     .foregroundStyle(.white)

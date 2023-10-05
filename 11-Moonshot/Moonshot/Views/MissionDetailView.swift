@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MissionDetailView: View {
-    private struct CrewMember {
+    fileprivate struct CrewMember {
         let role: String
         let astronaut: Astronaut
     }
@@ -37,6 +37,11 @@ struct MissionDetailView: View {
                         .frame(maxWidth: geometry.size.width * 0.6)
                         .padding(.top)
 
+                    Text(mission.formattedLaunchDate)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding(.top)
+
                     VStack(alignment: .leading) {
                         CustomDivider()
 
@@ -53,37 +58,7 @@ struct MissionDetailView: View {
                             .padding(.bottom, 5)
                     }
                     .padding(.horizontal)
-
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(crewMembers, id: \.role) { member in
-                                NavigationLink {
-                                    AstranoutDetailView(astronaut: member.astronaut)
-                                } label: {
-                                    HStack {
-                                        Image(member.astronaut.id)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: geometry.size.width * 0.33)
-                                            .clipShape(Capsule())
-                                            .overlay {
-                                                Capsule()
-                                                    .strokeBorder(.white, lineWidth: 1)
-                                            }
-                                        VStack(alignment: .leading) {
-                                            Text(member.astronaut.name)
-                                                .foregroundColor(.white)
-                                                .font(.headline)
-                                            Text(member.role)
-                                                .foregroundColor(.secondary)
-                                        }
-                                    }
-                                    .padding(.horizontal)
-                                }
-                            }
-                        }
-                    }
-                    .scrollIndicators(.hidden)
+                    CrewMembersView(crewMembers: crewMembers, width: geometry.size.width )
                 }
                 .padding(.bottom)
             }
@@ -91,6 +66,48 @@ struct MissionDetailView: View {
         .navigationTitle(mission.displayName)
         .navigationBarTitleDisplayMode(.inline)
         .background(.darkBackground)
+    }
+}
+
+extension MissionDetailView {
+    struct CrewMembersView: View {
+        fileprivate let crewMembers: [CrewMember]
+        fileprivate let width: CGFloat
+
+        var body: some View {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(crewMembers, id: \.role) { member in
+                        NavigationLink {
+                            AstranoutDetailView(astronaut: member.astronaut)
+                        } label: {
+                            HStack {
+                                Image(member.astronaut.id)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: width * 0.33)
+                                    .clipShape(Capsule())
+                                    .overlay {
+                                        Capsule()
+                                            .strokeBorder(.white, lineWidth: 1)
+                                    }
+
+                                VStack(alignment: .leading) {
+                                    Text(member.astronaut.name)
+                                        .foregroundColor(.white)
+                                        .font(.headline)
+                                    Text(member.role)
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                    }
+                }
+            }
+            .scrollIndicators(.hidden)
+
+        }
     }
 }
 
@@ -107,6 +124,6 @@ fileprivate struct CustomDivider: View {
     let missions: [Mission] = Bundle.main.decode("missions.json")
     let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
     
-    return MissionDetailView(mission: missions[0], astronauts: astronauts)
+    return MissionDetailView(mission: missions[1], astronauts: astronauts)
         .preferredColorScheme(.dark)
 }
