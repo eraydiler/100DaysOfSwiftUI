@@ -43,6 +43,7 @@
 		F9009CBA2AB8B6FB0011E99F = {
 			isa = PBXGroup;
 			children = (
+				F91E31482ABA0018006E122B /* Practices */,
 				F9009CC52AB8B6FB0011E99F /* WordScramble */,
 				F9009CC42AB8B6FB0011E99F /* Products */,
 			);
@@ -59,7 +60,6 @@
 		F9009CC52AB8B6FB0011E99F /* WordScramble */ = {
 			isa = PBXGroup;
 			children = (
-				F91E31482ABA0018006E122B /* Practices */,
 				F9D50B5A2ABB3F7500A9DEB6 /* Challenges */,
 				F9009CC62AB8B6FB0011E99F /* WordScrambleApp.swift */,
 				F9009CC82AB8B6FB0011E99F /* ContentView.swift */,

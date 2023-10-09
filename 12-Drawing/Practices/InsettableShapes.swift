@@ -1,5 +1,5 @@
 //
-//  InsettableShapeView.swift
+//  InsettableShapes.swift
 //  Drawing
 //
 //  Created by Eray Diler on 6.10.2023.
@@ -38,7 +38,7 @@ struct Arc2: InsettableShape {
     }
 }
 
-struct InsettableShapeView: View {
+struct InsettableShapes: View {
     var body: some View {
         Arc2(startAngle: .degrees(0), endAngle: .degrees(180), clockwise: true)
             .strokeBorder(.red, lineWidth: 40)
@@ -46,5 +46,5 @@ struct InsettableShapeView: View {
 }
 
 #Preview {
-    InsettableShapeView()
+    InsettableShapes()
 }

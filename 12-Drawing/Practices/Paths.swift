@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PathsView: View {
+struct Paths: View {
     var body: some View {
         Path { path in
             path.move(to: CGPoint(x: 200, y: 200))
@@ -21,5 +21,5 @@ struct PathsView: View {
 }
 
 #Preview {
-    PathsView()
+    Paths()
 }

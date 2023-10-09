@@ -1,5 +1,5 @@
 //
-//  ShapesView.swift
+//  Shapes.swift
 //  Drawing
 //
 //  Created by Eray Diler on 6.10.2023.
@@ -40,7 +40,7 @@ fileprivate struct Arc: Shape {
     }
 }
 
-struct ShapesView: View {
+struct Shapes: View {
     var body: some View {
         Triangle()
             .stroke(
@@ -57,5 +57,5 @@ struct ShapesView: View {
 }
 
 #Preview {
-    ShapesView()
+    Shapes()
 }

@@ -68,6 +68,7 @@
 		F98460702AC5FDF40056FE2F = {
 			isa = PBXGroup;
 			children = (
+				F96815EE2AC742B20085EC70 /* Practices */,
 				F984607B2AC5FDF40056FE2F /* iExpense */,
 				F984607A2AC5FDF40056FE2F /* Products */,
 			);
@@ -84,7 +85,6 @@
 		F984607B2AC5FDF40056FE2F /* iExpense */ = {
 			isa = PBXGroup;
 			children = (
-				F96815EE2AC742B20085EC70 /* Practices */,
 				F9F04E832ACA006C0057A433 /* Challenge */,
 				F984607C2AC5FDF40056FE2F /* iExpenseApp.swift */,
 				F984607E2AC5FDF40056FE2F /* ContentView.swift */,

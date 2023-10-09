@@ -101,6 +101,7 @@
 		F9C2F0B72ACA13A400EC6C27 = {
 			isa = PBXGroup;
 			children = (
+				F9F4CE7C2ACB32F4002054BB /* Practices */,
 				F9C2F0C22ACA13A400EC6C27 /* Moonshot */,
 				F9C2F0C12ACA13A400EC6C27 /* Products */,
 			);
@@ -117,7 +118,6 @@
 		F9C2F0C22ACA13A400EC6C27 /* Moonshot */ = {
 			isa = PBXGroup;
 			children = (
-				F9F4CE7C2ACB32F4002054BB /* Practices */,
 				F9901BEC2ACC834C00413999 /* Resources */,
 				F9901BF32ACC9F1F00413999 /* Extensions */,
 				F9901BDE2ACC7FF100413999 /* Models */,
