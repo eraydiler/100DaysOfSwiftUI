@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:13-HabitTracker/HabitTracker.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:12-Drawing/Drawing.xcodeproj">
    </FileRef>
    <FileRef
