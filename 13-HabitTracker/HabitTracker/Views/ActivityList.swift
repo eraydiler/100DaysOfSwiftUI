@@ -30,7 +30,7 @@ struct ActivityList: View {
                                 .font(.headline)
                             Text(item.description)
                                 .font(.footnote)
-                            Text(item.formattedNumberOfDescription)
+                            Text( item.formattedNumberOfDescription)
                                 .font(.caption)
                                 .foregroundStyle(item.preferredColor)
                         }
