@@ -7,38 +7,30 @@
 
 import SwiftUI
 
-struct Alert: ViewModifier {
-    @Binding var isPresented: Bool
-    let title: String
-    let message: String
+struct Alert {
+    var isPresented: Bool = false
+    var title: String = ""
+    var message: String = ""
     var buttonTitle = "OK"
+}
+
+struct AlertModifier: ViewModifier {
+    @Binding var alert: Alert
 
     func body(content: Content) -> some View {
         content.alert(
-            title,
-            isPresented: $isPresented) {
-                Button(buttonTitle) { }
+            alert.title,
+            isPresented: $alert.isPresented) {
+                Button(alert.buttonTitle) { }
             } message: {
-                Text(message)
+                Text(alert.message)
             }
     }
 }
 
 extension View {
-    func alert(
-        isPresented: Binding<Bool>,
-        title: String,
-        message: String,
-        buttonTitle: String = "OK"
-    ) -> some View {
-        return self.modifier(
-            Alert(
-                isPresented: isPresented,
-                title: title,
-                message: message,
-                buttonTitle: buttonTitle
-            )
-        )
+    func alert(_ alert: Binding<Alert>) -> some View {
+        self.modifier(AlertModifier(alert: alert))
     }
 }
 

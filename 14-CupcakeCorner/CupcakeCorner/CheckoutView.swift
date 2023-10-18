@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @ObservedObject var order: Order
-    @State private var presentConfirmationAlert = false
-    @State private var confirmationMessage = ""
+    @Binding var order: Order
+    @State private var confirmationAlert = Alert(title: "Thank you!")
+    @State private var errorAlert = Alert(title: "Oops!")
 
     var body: some View {
         ScrollView {
@@ -42,11 +42,8 @@ struct CheckoutView: View {
         }
         .navigationTitle("Check out")
         .navigationBarTitleDisplayMode(.inline)
-        .alert(
-            isPresented: $presentConfirmationAlert,
-            title: "Thank you!",
-            message: confirmationMessage
-        )
+        .alert($confirmationAlert)
+        .alert($errorAlert)
     }
 }
 
@@ -65,15 +62,16 @@ extension CheckoutView {
         do {
             let (data, _) = try await URLSession.shared.upload(for: request, from: encodedData)
             let confirmedOrder = try JSONDecoder().decode(Order.self, from: data)
-            confirmationMessage = "Your order for \(confirmedOrder.quantity)x \(confirmedOrder.type.name.lowercased()) cupcakes is on its way!"
-            presentConfirmationAlert = true
+            confirmationAlert.message = "Your order for \(confirmedOrder.quantity)x \(confirmedOrder.type.name.lowercased()) cupcakes is on its way!"
+            confirmationAlert.isPresented = true
         } catch  {
-            print("Checkout failed with \(error)")
+            errorAlert.message = "Checkout failed with \(error)"
+            errorAlert.isPresented = true
         }
     }
 }
 
 #Preview {
-    let order = Order()
-    return CheckoutView(order: order)
+    @State var order = Order()
+    return CheckoutView(order: $order)
 }

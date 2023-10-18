@@ -7,10 +7,14 @@
 
 import Foundation
 
-class Order: ObservableObject, Codable {
-    @Published var type: OrderType = .vanilla
-    @Published var quantity = 3
-    @Published var specialRequestEnabled = false {
+class OrderDraft: ObservableObject {
+    @Published var order = Order()
+}
+
+struct Order: Codable {
+    var type: OrderType = .vanilla
+    var quantity = 3
+    var specialRequestEnabled = false {
         didSet {
             if !specialRequestEnabled {
                 extraFrosting = false
@@ -18,9 +22,9 @@ class Order: ObservableObject, Codable {
             }
         }
     }
-    @Published var extraFrosting = false
-    @Published var addSprinkles = false
-    @Published var delivery = Delivery()
+    var extraFrosting = false
+    var addSprinkles = false
+    var delivery = Delivery()
 
     init() { }
 
@@ -30,24 +34,6 @@ class Order: ObservableObject, Codable {
         case extraFrosting
         case addSprinkles
         case delivery
-    }
-
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        type = try container.decode(OrderType.self, forKey: .type)
-        quantity = try container.decode(Int.self, forKey: .quantity)
-        extraFrosting = try container.decode(Bool.self, forKey: .extraFrosting)
-        addSprinkles = try container.decode(Bool.self, forKey: .addSprinkles)
-        delivery = try container.decode(Delivery.self, forKey: .delivery)
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(type, forKey: .type)
-        try container.encode(quantity, forKey: .quantity)
-        try container.encode(extraFrosting, forKey: .extraFrosting)
-        try container.encode(addSprinkles, forKey: .addSprinkles)
-        try container.encode(delivery, forKey: .delivery)
     }
 }
 
@@ -76,10 +62,10 @@ extension Order {
         var zip: String = ""
 
         var isValid: Bool {
-            !name.isEmpty
-            && !street.isEmpty
-            && !city.isEmpty
-            && !zip.isEmpty
+            !name.trimmingCharacters(in: .whitespaces).isEmpty
+            && !street.trimmingCharacters(in: .whitespaces).isEmpty
+            && !city.trimmingCharacters(in: .whitespaces).isEmpty
+            && !zip.trimmingCharacters(in: .whitespaces).isEmpty
         }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddressView: View {
-    @ObservedObject var order: Order
+    @Binding var order: Order
 
     var body: some View {
         Form {
@@ -21,7 +21,7 @@ struct AddressView: View {
 
             Section {
                 NavigationLink {
-                    CheckoutView(order: order)
+                    CheckoutView(order: $order)
                 } label: {
                     Text("Check out")
                 }
@@ -34,6 +34,6 @@ struct AddressView: View {
 }
 
 #Preview {
-    let order = Order()
-    return AddressView(order: order)
+    @State var order = Order()
+    return AddressView(order: $order)
 }

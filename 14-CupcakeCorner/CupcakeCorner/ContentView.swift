@@ -8,34 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var order = Order()
+    @ObservedObject private var draft = OrderDraft()
 
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    Picker("Select your cake type", selection: $order.type) {
+                    Picker("Select your cake type", selection: $draft.order.type) {
                         ForEach(OrderType.allCases, id: \.self) {
                             Text($0.name)
                         }
                     }
                     .pickerStyle(.navigationLink)
 
-                    Stepper("Number of cakes: \(order.quantity)", value: $order.quantity, in: 1...10)
+                    Stepper("Number of cakes: \(draft.order.quantity)", value: $draft.order.quantity, in: 1...10)
                 }
 
                 Section {
-                    Toggle("Any special requests?", isOn: $order.specialRequestEnabled.animation())
+                    Toggle("Any special requests?", isOn: $draft.order.specialRequestEnabled.animation())
 
-                    if order.specialRequestEnabled {
-                        Toggle("Extra frosting?", isOn: $order.extraFrosting)
-                        Toggle("Add sprinkles?", isOn: $order.addSprinkles)
+                    if draft.order.specialRequestEnabled {
+                        Toggle("Extra frosting?", isOn: $draft.order.extraFrosting)
+                        Toggle("Add sprinkles?", isOn: $draft.order.addSprinkles)
                     }
                 }
 
                 Section {
                     NavigationLink {
-                        AddressView(order: order)
+                        AddressView(order: $draft.order)
                     } label: {
                         Text("Delivery details")
                     }
