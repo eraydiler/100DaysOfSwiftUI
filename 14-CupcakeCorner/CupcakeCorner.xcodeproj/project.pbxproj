@@ -18,6 +18,7 @@
 		F94A27C62ADDAC8A00660913 /* CodableAndURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A27C52ADDAC8A00660913 /* CodableAndURLSession.swift */; };
 		F94A27C82ADDAD5800660913 /* AsyncImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A27C72ADDAD5700660913 /* AsyncImageLoading.swift */; };
 		F94A27CA2ADDAEB700660913 /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A27C92ADDAEB700660913 /* FormValidation.swift */; };
+		F94F78EB2AE003BD00E1712C /* AlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94F78EA2AE003BD00E1712C /* AlertModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		F94A27C52ADDAC8A00660913 /* CodableAndURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableAndURLSession.swift; sourceTree = "<group>"; };
 		F94A27C72ADDAD5700660913 /* AsyncImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageLoading.swift; sourceTree = "<group>"; };
 		F94A27C92ADDAEB700660913 /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
+		F94F78EA2AE003BD00E1712C /* AlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				F928251B2ADE99AA0075B455 /* AddressView.swift */,
 				F928251D2ADEA9F50075B455 /* CheckoutView.swift */,
 				F92825192ADE96090075B455 /* Order.swift */,
+				F94F78EA2AE003BD00E1712C /* AlertModifier.swift */,
 				F94A27B82ADD8D3700660913 /* Assets.xcassets */,
 				F94A27BA2ADD8D3700660913 /* Preview Content */,
 			);
@@ -175,6 +178,7 @@
 				F94A27C42ADDAB7C00660913 /* CodableAndPublished.swift in Sources */,
 				F928251A2ADE96090075B455 /* Order.swift in Sources */,
 				F928251E2ADEA9F50075B455 /* CheckoutView.swift in Sources */,
+				F94F78EB2AE003BD00E1712C /* AlertModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

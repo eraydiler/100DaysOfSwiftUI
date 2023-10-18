@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Order: ObservableObject {
+class Order: ObservableObject, Codable {
     @Published var type: OrderType = .vanilla
     @Published var quantity = 3
     @Published var specialRequestEnabled = false {
@@ -21,9 +21,37 @@ class Order: ObservableObject {
     @Published var extraFrosting = false
     @Published var addSprinkles = false
     @Published var delivery = Delivery()
+
+    init() { }
+
+    enum CodingKeys: CodingKey {
+        case type
+        case quantity
+        case extraFrosting
+        case addSprinkles
+        case delivery
+    }
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        type = try container.decode(OrderType.self, forKey: .type)
+        quantity = try container.decode(Int.self, forKey: .quantity)
+        extraFrosting = try container.decode(Bool.self, forKey: .extraFrosting)
+        addSprinkles = try container.decode(Bool.self, forKey: .addSprinkles)
+        delivery = try container.decode(Delivery.self, forKey: .delivery)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(type, forKey: .type)
+        try container.encode(quantity, forKey: .quantity)
+        try container.encode(extraFrosting, forKey: .extraFrosting)
+        try container.encode(addSprinkles, forKey: .addSprinkles)
+        try container.encode(delivery, forKey: .delivery)
+    }
 }
 
-enum OrderType: String, CaseIterable {
+enum OrderType: String, CaseIterable, Codable {
     case vanilla, strawberry, chocolate, rainbow
 
     var name: String {
@@ -41,7 +69,7 @@ enum OrderType: String, CaseIterable {
 }
 
 extension Order {
-    struct Delivery {
+    struct Delivery: Codable {
         var name: String = ""
         var street: String = ""
         var city: String = ""
