@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:15-Bookworm/Bookworm.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:14-CupcakeCorner/CupcakeCorner.xcodeproj">
    </FileRef>
    <FileRef
