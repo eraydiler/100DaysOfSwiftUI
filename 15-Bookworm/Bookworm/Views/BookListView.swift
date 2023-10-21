@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-struct ContentView: View {
+struct BookListView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var context
     @FetchRequest(sortDescriptors: [
@@ -61,7 +61,7 @@ struct ContentView: View {
     }
 }
 
-extension ContentView {
+extension BookListView {
     private func delete(_ offsets: IndexSet) {
         for offset in offsets {
             let book = books[offset]
@@ -75,6 +75,6 @@ extension ContentView {
 #Preview {
     @StateObject var coreDataController = CoreDataController()
 
-    return ContentView()
+    return BookListView()
         .environment(\.managedObjectContext, coreDataController.container.viewContext)
 }
