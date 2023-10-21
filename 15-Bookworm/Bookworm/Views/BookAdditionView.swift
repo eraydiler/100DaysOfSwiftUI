@@ -14,8 +14,10 @@ struct BookAdditionView: View {
     @State private var title = ""
     @State private var author = ""
     @State private var rating = 3
-    @State private var genre = ""
+    @State private var genre = "Fantasy"
     @State private var review = ""
+
+    @State private var showValidationAlert = false
 
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
 
@@ -43,27 +45,58 @@ struct BookAdditionView: View {
                 Section {
                     Button("Save") {
                         saveBook()
-                        dismiss()
                     }
                 }
             }
             .autocorrectionDisabled()
             .navigationTitle("Add Book")
+            .alert("Opps!", isPresented: $showValidationAlert) {
+                Button("OK") { }
+            } message: {
+                Text("Please make sure you filled title and author fields")
+            }
         }
     }
 }
 
 extension BookAdditionView {
+    private var isFormValid: Bool {
+        !title.isEmpty
+        && !author.isEmpty
+        && !genre.isEmpty
+    }
+
     private func saveBook() {
+        if !isFormValid {
+            showValidationAlert.toggle()
+            return
+        }
+
         let newBook = Book(context: context)
         newBook.id = UUID()
-        newBook.title = title
-        newBook.author = author
+        if !title.isEmpty {
+            newBook.title = title
+        }
+        if !author.isEmpty {
+            newBook.author = author
+        }
         newBook.rating = Int16(rating)
-        newBook.genre = genre
-        newBook.review = review
+        if !genre.isEmpty {
+            newBook.genre = genre
+        }
+        if !review.isEmpty {
+            newBook.review = review
+        }
 
-        try? context.save()
+        newBook.creationDate = Date.now
+
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
+
+        dismiss()
     }
 }
 

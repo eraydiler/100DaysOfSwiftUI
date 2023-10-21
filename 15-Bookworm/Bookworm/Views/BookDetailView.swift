@@ -29,6 +29,18 @@ struct BookDetailView: View {
                     .background(.black.opacity(0.75))
                     .clipShape(Capsule())
                     .offset(x: -5, y: -5)
+
+                if let date = book.creationDate {
+                    Text(date.formatted())
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.caption2)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.white)
+                        .shadow(color: .black, radius: 5)
+                        .padding(.leading, 5)
+                        .padding(.bottom, 5)
+
+                }
             }
             Text(book.author ?? "Unknown author")
                 .font(.title)

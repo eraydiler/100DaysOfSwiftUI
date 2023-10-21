@@ -28,6 +28,7 @@ extension CoreDataController {
         book.genre = "Fantasy"
         book.rating = 4
         book.review = "This was a great book; I really enjoyed it."
+        book.creationDate = Date.now
         return book
     }
 }
