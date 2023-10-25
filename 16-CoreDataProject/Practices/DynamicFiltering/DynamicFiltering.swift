@@ -8,7 +8,6 @@
 import CoreData
 import SwiftUI
 
-
 ///
 /// Notes:
 /// Because fetch requests are created as properties, and it's not possible to reference properties with each other,
@@ -74,7 +73,7 @@ extension DynamicFiltering {
 }
 
 #Preview {
-    @StateObject var coreDataController = PracticesCoreDataController()
+    @StateObject var coreDataController = CoreDataController()
     return DynamicFiltering()
         .environment(\.managedObjectContext, coreDataController.container.viewContext)
 }

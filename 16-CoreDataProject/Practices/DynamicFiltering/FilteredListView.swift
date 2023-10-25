@@ -13,7 +13,7 @@ struct FilteredListView<T: NSManagedObject, Content: View>: View {
     @FetchRequest var fetchRequest: FetchedResults<T>
     let content: (T) -> Content
 
-    init(filter: Filter, content: @escaping (T) -> Content) {
+    init(filter: Filter, @ViewBuilder content: @escaping (T) -> Content) {
         _fetchRequest = FetchRequest(sortDescriptors: [], predicate: filter.predicate)
         self.content = content
     }
@@ -26,3 +26,4 @@ struct FilteredListView<T: NSManagedObject, Content: View>: View {
         }
     }
 }
+

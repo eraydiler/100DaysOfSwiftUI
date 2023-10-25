@@ -38,7 +38,7 @@ struct UniqueObjectsWithConstraints: View {
 }
 
 #Preview {
-    @StateObject var coreDataController = PracticesCoreDataController()
+    @StateObject var coreDataController = CoreDataController()
     return UniqueObjectsWithConstraints()
         .environment(\.managedObjectContext, coreDataController.container.viewContext)
 

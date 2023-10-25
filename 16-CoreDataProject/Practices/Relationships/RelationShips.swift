@@ -55,7 +55,7 @@ struct RelationShips: View {
 }
 
 #Preview {
-    @StateObject var coreDataController = PracticesCoreDataController()
+    @StateObject var coreDataController = CoreDataController()
     return RelationShips()
         .environment(\.managedObjectContext, coreDataController.container.viewContext)
 }
