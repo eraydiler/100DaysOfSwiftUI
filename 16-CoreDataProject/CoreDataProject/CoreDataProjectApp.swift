@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct CoreDataProjectApp: App {
+    @StateObject var coreDataController = PracticesCoreDataController()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            DynamicFiltering()
+                .environment(\.managedObjectContext, coreDataController.container.viewContext)
         }
     }
 }
