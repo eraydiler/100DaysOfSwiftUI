@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct Milestone_Projects10_12App: App {
+    @StateObject private var coreDataController = CoreDataController()
+
     var body: some Scene {
         WindowGroup {
             UserListView()
+                .environment(
+                    \.managedObjectContext,
+                     coreDataController.container.viewContext
+                )
         }
     }
 }

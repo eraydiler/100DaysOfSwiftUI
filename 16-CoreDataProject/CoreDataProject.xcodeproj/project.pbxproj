@@ -112,10 +112,10 @@
 		F9768C0D2AE6872D005502DE /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				F9768C0E2AE6872D005502DE /* CoreDataProjectApp.swift */,
 				F915F89B2AE98340006CBE9F /* Singer+CoreDataClass.swift */,
 				F915F89C2AE98340006CBE9F /* Singer+CoreDataProperties.swift */,
 				F9768C1E2AE6879C005502DE /* PracticesDataController.swift */,
-				F9768C0E2AE6872D005502DE /* CoreDataProjectApp.swift */,
 				F9768C102AE6872D005502DE /* ChallengesView.swift */,
 				F9768C122AE6872E005502DE /* Assets.xcassets */,
 				F9768C142AE6872E005502DE /* Preview Content */,
