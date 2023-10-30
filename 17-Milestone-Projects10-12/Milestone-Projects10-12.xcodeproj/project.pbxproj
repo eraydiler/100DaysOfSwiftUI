@@ -35,11 +35,11 @@
 		F93A247F2AEAC63D003CB923 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F93A24852AEADE27003CB923 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		F93A24872AEAEEC0003CB923 /* FriendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailView.swift; sourceTree = "<group>"; };
-		F9CAF0A52AED40E700639CC2 /* CachedFriend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CachedFriend+CoreDataClass.swift"; path = "../../../CachedFriend+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F9CAF0A62AED40E700639CC2 /* CachedFriend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CachedFriend+CoreDataProperties.swift"; path = "../../../CachedFriend+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F9CAF0A52AED40E700639CC2 /* CachedFriend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedFriend+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F9CAF0A62AED40E700639CC2 /* CachedFriend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedFriend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F9D807972AEC150D00459075 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		F9D8079A2AEC16E900459075 /* CachedUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CachedUser+CoreDataClass.swift"; path = "../../../CachedUser+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F9D8079B2AEC16E900459075 /* CachedUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CachedUser+CoreDataProperties.swift"; path = "../../../CachedUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F9D8079A2AEC16E900459075 /* CachedUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F9D8079B2AEC16E900459075 /* CachedUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F9D807A22AEC243500459075 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

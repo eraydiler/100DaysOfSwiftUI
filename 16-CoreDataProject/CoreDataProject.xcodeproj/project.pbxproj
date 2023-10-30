@@ -36,8 +36,8 @@
 		F915F8912AE9759E006CBE9F /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Country+CoreDataClass.swift"; path = "Practices/Relationships/Country+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		F915F8922AE9759E006CBE9F /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Country+CoreDataProperties.swift"; path = "Practices/Relationships/Country+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		F915F8972AE97624006CBE9F /* RelationShips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationShips.swift; sourceTree = "<group>"; };
-		F915F89B2AE98340006CBE9F /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Singer+CoreDataClass.swift"; path = "../../Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F915F89C2AE98340006CBE9F /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Singer+CoreDataProperties.swift"; path = "../../Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F915F89B2AE98340006CBE9F /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F915F89C2AE98340006CBE9F /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F9768C0B2AE6872D005502DE /* CoreDataProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9768C0E2AE6872D005502DE /* CoreDataProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProjectApp.swift; sourceTree = "<group>"; };
 		F9768C102AE6872D005502DE /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };

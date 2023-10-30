@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:17*Milestone-Projects10-12/Milestone-Projects10-12.xcodeproj">
+      location = "group:18-Instafilter/Instafilter.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:17-Milestone-Projects10-12/Milestone-Projects10-12.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:16-CoreDataProject/CoreDataProject.xcodeproj">
