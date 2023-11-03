@@ -9,8 +9,8 @@ import PhotosUI
 import SwiftUI
 
 ///
-/// Wrapping a UIViewController in a SwiftUI View
-/// A simple example that shows how to make connection between a SwiftUI view and
+/// Wrapping a UIViewController
+/// A simple example that shows how to make connection between a SwiftUI View and
 /// UIKit's conventional apis.
 ///
 
