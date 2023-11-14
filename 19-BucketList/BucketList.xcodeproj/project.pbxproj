@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F90642212AFBB837000AB05A /* MapKitIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90642202AFBB837000AB05A /* MapKitIntegration.swift */; };
 		F90642232AFBBC29000AB05A /* TouchIDAndFaceID.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90642222AFBBC29000AB05A /* TouchIDAndFaceID.swift */; };
+		F92FC0D42B03B9D6002A1F9A /* EditView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92FC0D32B03B9D5002A1F9A /* EditView+ViewModel.swift */; };
 		F95220CE2AFD02A400022FDD /* AddingLocationsOnMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95220CD2AFD02A400022FDD /* AddingLocationsOnMap.swift */; };
 		F96BFC272AF92822008ABC86 /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96BFC262AF92822008ABC86 /* BucketListApp.swift */; };
 		F96BFC292AF92822008ABC86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96BFC282AF92822008ABC86 /* ContentView.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		F90642202AFBB837000AB05A /* MapKitIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitIntegration.swift; sourceTree = "<group>"; };
 		F90642222AFBBC29000AB05A /* TouchIDAndFaceID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDAndFaceID.swift; sourceTree = "<group>"; };
+		F92FC0D32B03B9D5002A1F9A /* EditView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditView+ViewModel.swift"; sourceTree = "<group>"; };
 		F95220CD2AFD02A400022FDD /* AddingLocationsOnMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingLocationsOnMap.swift; sourceTree = "<group>"; };
 		F96BFC232AF92822008ABC86 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96BFC262AF92822008ABC86 /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				F9BD1EDE2AFE487A0011F51D /* Location.swift */,
 				F9F5C0E82B025D5B000A5819 /* Result.swift */,
 				F9F5C0EA2B0284AE000A5819 /* ContentView+VIewModel.swift */,
+				F92FC0D32B03B9D5002A1F9A /* EditView+ViewModel.swift */,
 				F96BFC2A2AF92823008ABC86 /* Assets.xcassets */,
 				F96BFC2C2AF92823008ABC86 /* Preview Content */,
 			);
@@ -180,6 +183,7 @@
 				F96BFC292AF92822008ABC86 /* ContentView.swift in Sources */,
 				F95220CE2AFD02A400022FDD /* AddingLocationsOnMap.swift in Sources */,
 				F9BD1EDF2AFE487A0011F51D /* Location.swift in Sources */,
+				F92FC0D42B03B9D6002A1F9A /* EditView+ViewModel.swift in Sources */,
 				F96BFC382AF9500E008ABC86 /* WritingDataToDocuments.swift in Sources */,
 				F9BD1EE12AFE49400011F51D /* EditView.swift in Sources */,
 				F9F5C0EB2B0284AE000A5819 /* ContentView+VIewModel.swift in Sources */,

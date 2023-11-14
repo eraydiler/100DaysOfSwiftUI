@@ -72,7 +72,7 @@ extension ContentView {
             }
         }
 
-        func authenticate() {
+        func authenticate(errorHandler: @escaping ((String?) -> ()) ) {
             let context = LAContext()
 
             context.authenticate(reason: "Please authenticate yourself to unlock your places") {
@@ -85,8 +85,8 @@ extension ContentView {
                 Task { @MainActor [weak self] in
                     self?.isUnlocked = true
                 }
-            } errorHandler: {
-                print("Failed to authenticate.")
+            } errorHandler: { error in
+                errorHandler(error)
             }
         }
     }

@@ -26,7 +26,7 @@ struct TouchIDAndFaceID: View {
         let context = LAContext()
         context.authenticate {
             isUnlocked = true
-        } errorHandler: {
+        } errorHandler: { _ in 
             print("Authentication Failed!")
         }
     }
@@ -41,7 +41,7 @@ extension LAContext {
     func authenticate(
         reason: String = "We need to unlock your data.",
         successHandler: @escaping  () -> (),
-        errorHandler: @escaping () -> ()
+        errorHandler: @escaping (String?) -> ()
     ) {
         let context = LAContext()
         var error: NSError?
@@ -56,12 +56,12 @@ extension LAContext {
                     successHandler()
                 } else {
                     // there was a problem
-                    errorHandler()
+                    errorHandler(authenticationError?.localizedDescription)
                 }
             }
         } else {
             // no biometrics
-            errorHandler()
+            errorHandler(nil)
         }
     }
 }
