@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:20-AccessibilitySandbox/AccessibilitySandbox.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:19-BucketList/BucketList.xcodeproj">
    </FileRef>
    <FileRef

@@ -9,12 +9,12 @@ import Foundation
 
 extension EditView {
     class ViewModel: ObservableObject {
-        var location: Location
-
         @Published var name: String
         @Published var description: String
         @Published var loadingState = LoadingState.loading
         @Published var pages = [Page]()
+        
+        private var location: Location
 
         init(location: Location) {
             self.location = location
