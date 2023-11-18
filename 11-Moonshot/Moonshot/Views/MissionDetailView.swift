@@ -36,11 +36,13 @@ struct MissionDetailView: View {
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.6)
                         .padding(.top)
+                        .accessibilityHidden(true)
 
                     Text(mission.formattedLaunchDate)
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding(.top)
+                        .accessibilityLabel("Mission launch date is \(mission.formattedLaunchDate)")
 
                     VStack(alignment: .leading) {
                         CustomDivider()

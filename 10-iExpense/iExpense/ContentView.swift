@@ -26,6 +26,9 @@ struct ContentView: View {
                         Spacer()
                         Text(expense.amount, format: .currency(code: "USD"))
                     }
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("\(expense.amount.formatted()) USD for \(expense.name)")
+                    .accessibilityHint("\(expense.type) expense")
                 }
                 .onDelete(perform: delete)
             }

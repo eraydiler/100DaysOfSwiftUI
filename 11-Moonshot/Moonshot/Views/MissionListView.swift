@@ -43,7 +43,8 @@ struct MissionListView: View {
                 }
                 .buttonStyle(
                     NavBarButton(
-                        systemImage: displayMode == .grid ? "list.bullet" : "circle.grid.2x2"
+                        systemImage: displayMode == .grid ? "list.bullet" : "circle.grid.2x2",
+                        accessibilityName: "Grid or list"
                     )
                 )
             }
@@ -117,6 +118,10 @@ struct MissionListView: View {
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(.lightBackground)
+                .accessibilityElement()
+                .accessibilityLabel(
+                    "\(displayName) mission on \(launchDate)"
+                )
             }
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .overlay {
@@ -129,10 +134,13 @@ struct MissionListView: View {
 
 struct NavBarButton: ButtonStyle {
     var systemImage: String = ""
+    var accessibilityName = ""
 
     func makeBody(configuration: Configuration) -> some View {
         Image(systemName: systemImage)
             .foregroundStyle(.white)
+            .accessibilityLabel(accessibilityName)
+            .accessibilityAddTraits(.isButton)
     }
 }
 

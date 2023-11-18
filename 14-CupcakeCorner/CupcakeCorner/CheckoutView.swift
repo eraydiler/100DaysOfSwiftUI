@@ -18,7 +18,7 @@ struct CheckoutView: View {
                 AsyncImage(url: URL(string: "https://hws.dev/img/cupcakes@3x.jpg"), scale: 3) { phase in
                     switch phase {
                     case .empty:
-                        ProgressView()
+                        ProgressView()                            .accessibilityHidden(true)
                     case .failure:
                         Text("Image couldn't loaded")
                     case .success(let image):
