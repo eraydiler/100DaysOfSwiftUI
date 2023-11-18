@@ -14,14 +14,28 @@ struct StarRatingView: View {
     var inactiveColor: Color = .gray
     var inactiveImage: Image?
     var activeImage: Image = Image(systemName: "star.fill")
+    private let maximumRating = 5
 
     var body: some View {
         HStack {
-            ForEach(1...5, id: \.self) { number in
+            ForEach(1...maximumRating, id: \.self) { number in
                 image(for: number)
                     .onTapGesture {
                         rating = number
                     }
+            }
+        }
+        .accessibilityElement()
+        .accessibilityLabel("Rating")
+        .accessibilityValue(rating == 1 ? "1 star" : "\(rating) stars")
+        .accessibilityAdjustableAction { direction in
+            switch direction {
+            case .increment:
+                if rating < maximumRating { rating += 1 }
+            case .decrement:
+                if rating > 1 { rating -= 1 }
+            default:
+                break
             }
         }
     }
