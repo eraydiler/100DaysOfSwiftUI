@@ -37,7 +37,7 @@ struct WritingDataToDocuments: View {
 /// for the documents directory, perhaps making it an extension on FileManager?
 extension FileManager {
     func decode<T: Codable>(_ file: String) -> T {
-        let url = URL.documentsDirectory.appendingPathComponent("message.txt")
+        let url = URL.documentsDirectory.appendingPathComponent(file)
 
         guard let data = try? Data(contentsOf: url) else {
             fatalError("Failed to convert data from \(url)")

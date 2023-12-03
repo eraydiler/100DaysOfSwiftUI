@@ -20,7 +20,7 @@
 		F9768C112AE6872D005502DE /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9768C102AE6872D005502DE /* ChallengesView.swift */; };
 		F9768C132AE6872E005502DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9768C122AE6872E005502DE /* Assets.xcassets */; };
 		F9768C162AE6872E005502DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9768C152AE6872E005502DE /* Preview Assets.xcassets */; };
-		F9768C1F2AE6879C005502DE /* PracticesDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9768C1E2AE6879C005502DE /* PracticesDataController.swift */; };
+		F9768C1F2AE6879C005502DE /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9768C1E2AE6879C005502DE /* CoreDataController.swift */; };
 		F9768C232AE687E1005502DE /* Practices.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9768C212AE687E1005502DE /* Practices.xcdatamodeld */; };
 		F9768C332AE6C298005502DE /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9768C312AE6C298005502DE /* Movie+CoreDataProperties.swift */; };
 		F9768C342AE6C298005502DE /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9768C322AE6C298005502DE /* Movie+CoreDataClass.swift */; };
@@ -43,7 +43,7 @@
 		F9768C102AE6872D005502DE /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		F9768C122AE6872E005502DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9768C152AE6872E005502DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F9768C1E2AE6879C005502DE /* PracticesDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesDataController.swift; sourceTree = "<group>"; };
+		F9768C1E2AE6879C005502DE /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		F9768C222AE687E1005502DE /* CoreDataProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataProject.xcdatamodel; sourceTree = "<group>"; };
 		F9768C312AE6C298005502DE /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F9768C322AE6C298005502DE /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				F9768C0E2AE6872D005502DE /* CoreDataProjectApp.swift */,
 				F915F89B2AE98340006CBE9F /* Singer+CoreDataClass.swift */,
 				F915F89C2AE98340006CBE9F /* Singer+CoreDataProperties.swift */,
-				F9768C1E2AE6879C005502DE /* PracticesDataController.swift */,
+				F9768C1E2AE6879C005502DE /* CoreDataController.swift */,
 				F9768C102AE6872D005502DE /* ChallengesView.swift */,
 				F9768C122AE6872E005502DE /* Assets.xcassets */,
 				F9768C142AE6872E005502DE /* Preview Content */,
@@ -238,7 +238,7 @@
 				F9768C232AE687E1005502DE /* Practices.xcdatamodeld in Sources */,
 				F9768C342AE6C298005502DE /* Movie+CoreDataClass.swift in Sources */,
 				F915F8982AE97624006CBE9F /* RelationShips.swift in Sources */,
-				F9768C1F2AE6879C005502DE /* PracticesDataController.swift in Sources */,
+				F9768C1F2AE6879C005502DE /* CoreDataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
