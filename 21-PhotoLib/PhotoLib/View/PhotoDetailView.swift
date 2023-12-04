@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct PhotoDetailView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    let image: Image
+    let name: String
 
-#Preview {
-    PhotoDetailView()
+    var body: some View {
+        GeometryReader { geometry in
+            ScrollView(.vertical) {
+                VStack(alignment: .center) {
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: geometry.size.width * 0.9)
+                        .clipped()
+                        .cornerRadius(10)
+                        .shadow(radius: 10)
+                        .accessibilityHidden(true)
+
+                    Text(name)
+                        .font(.headline)
+                        .padding(.top)
+                }
+            }
+            .multilineTextAlignment(.center)
+            .padding(.horizontal)
+
+        }
+    }
 }

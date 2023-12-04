@@ -12,20 +12,22 @@ import SwiftUI
  https://medium.com/@ganeshrajugalla/swiftui-uiviewcontrollerrepresentable-4b74b4a672ff
 */
 
-struct PhotoList: View {
+struct PhotoListView: View {
     @Environment(\.managedObjectContext) private var moc
-    @FetchRequest(sortDescriptors: [
-        SortDescriptor(\.name)
-    ]) var photos: FetchedResults<Photo>
 
+    @State private var items: [PhotoListItem] = []
     @State private var presentingPhotoPickingFlow = false
     @State private var inputImage: UIImage?
     @State private var inputName: String = ""
 
     var body: some View {
         NavigationStack {
-            List(photos) { photo in
-                PhotoRow(photo: photo)
+            List(items) { item in
+                NavigationLink {
+                    PhotoDetailView(image: Image(uiImage: item.image), name: item.name)
+                } label: {
+                    PhotoRow(item: item)
+                }
             }
             .toolbar {
                 Button("", systemImage: "plus") {
@@ -47,11 +49,31 @@ struct PhotoList: View {
                     }
                 )
             }
+            .onAppear(perform: loadData)
         }
     }
 }
 
-extension PhotoList {
+extension PhotoListView {
+    private func loadData() {
+        if !items.isEmpty { return }
+        
+        let request = Photo.fetchRequest()
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptors = [sort]
+
+        do {
+            let photos = try moc.fetch(request)
+            for photo in photos {
+                if let image = photo.getImage() {
+                    items.append(PhotoListItem(image: image, name: photo.wrappedName))
+                }
+            }
+        } catch {
+            print("Fetch failed")
+        }
+    }
+
     private func savePhoto() {
         guard let image = inputImage else {
             return
@@ -76,37 +98,32 @@ extension PhotoList {
 }
 
 fileprivate struct PhotoRow: View {
-    let photo: Photo
+    let item: PhotoListItem
 
     var body: some View {
         HStack {
-            if let filename = photo.imageFilename {
-                let url = URL.documentsDirectory.appendingPathComponent(filename.uuidString)
+            Image(uiImage: item.image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100)
+                .clipped()
+                .cornerRadius(10)
+                .shadow(radius: 10)
+                .padding(.top, 10)
+                .padding(.bottom, 10)
 
-                AsyncImage(url: url) { phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                            .frame(width: 100, height: 100)
-                    case .failure(let error):
-                        Text(error.localizedDescription)
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 100, height: 100)
-                    @unknown default:
-                        fatalError("Unknown state")
-                    }
-                }
-            }
-
-            Text(photo.wrappedName)
+            Text(item.name)
                 .padding(.leading)
         }
     }
 }
 
+fileprivate struct PhotoListItem: Identifiable {
+    var id: String { name }
+    var image: UIImage
+    var name: String
+}
+
 #Preview {
-    PhotoList()
+    PhotoListView()
 }

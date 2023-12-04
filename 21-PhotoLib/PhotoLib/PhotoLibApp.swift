@@ -13,7 +13,7 @@ struct PhotoLibApp: App {
 
     var body: some Scene {
         WindowGroup {
-            PhotoList()
+            PhotoListView()
                 .environment(
                     \.managedObjectContext,
                      coreDataController.container.viewContext

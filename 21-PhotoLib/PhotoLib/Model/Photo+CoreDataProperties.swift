@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 
 extension Photo {
@@ -26,4 +27,22 @@ extension Photo: Identifiable {
 
 extension Photo {
     var wrappedName: String { name ?? "No name"}
+}
+
+extension Photo {
+    func getImage() -> UIImage? {
+        guard let fileName = imageFilename?.uuidString else {
+            return nil
+        }
+
+        let fileURL = URL.documentsDirectory.appendingPathComponent(fileName)
+
+        do {
+            let imageData = try Data(contentsOf: fileURL)
+            return UIImage(data: imageData)
+        } catch {
+            print("Error loading image : \(error)")
+            return nil
+        }
+    }
 }
