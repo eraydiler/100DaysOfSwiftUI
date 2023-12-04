@@ -12,26 +12,28 @@ struct PhotoDetailView: View {
     let name: String
 
     var body: some View {
-        GeometryReader { geometry in
-            ScrollView(.vertical) {
-                VStack(alignment: .center) {
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: geometry.size.width * 0.9)
-                        .clipped()
-                        .cornerRadius(10)
-                        .shadow(radius: 10)
-                        .accessibilityHidden(true)
-
-                    Text(name)
-                        .font(.headline)
-                        .padding(.top)
+        NavigationStack {
+            GeometryReader { geometry in
+                ScrollView(.vertical) {
+                    VStack(alignment: .center) {
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: geometry.size.width * 0.9)
+                            .clipped()
+                            .cornerRadius(10)
+                            .shadow(radius: 10)
+                            .accessibilityHidden(true)
+                        
+                        Text(name)
+                            .font(.headline)
+                            .padding(.top)
+                    }
+                    .padding([.horizontal, .vertical])
                 }
+                .multilineTextAlignment(.center)
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .multilineTextAlignment(.center)
-            .padding(.horizontal)
-
         }
     }
 }

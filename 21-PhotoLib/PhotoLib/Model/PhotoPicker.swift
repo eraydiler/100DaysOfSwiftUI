@@ -63,8 +63,10 @@ extension ImagePicker {
             // If this has an image we can use, use it
             if provider.canLoadObject(ofClass: UIImage.self) {
                 provider.loadObject(ofClass: UIImage.self) { image, _ in
-                    self.parent.image = image as? UIImage
-                    self.parent.didFinishPicking()
+                    DispatchQueue.main.async {
+                        self.parent.image = image as? UIImage
+                        self.parent.didFinishPicking()
+                    }
                 }
             }
         }
