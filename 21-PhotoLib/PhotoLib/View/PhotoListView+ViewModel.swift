@@ -72,7 +72,8 @@ extension PhotoListView {
             do {
                 let photos = try moc.fetch(request)
                 for photo in photos {
-                    if let image = photo.getImage() {
+                    let filename = photo.imageFilename?.uuidString
+                    if let image = FileManager.default.getImage(fromFile: filename) {
                         items.append(PhotoListItem(image: image, name: photo.wrappedName))
                     }
                 }
@@ -97,7 +98,10 @@ extension PhotoListView {
             items = fetchedResultsController
                 .fetchedObjects?
                 .compactMap { photo in
-                    guard let image = photo.getImage() else { return nil }
+                    let filename = photo.imageFilename?.uuidString
+                    guard let image = FileManager.default.getImage(fromFile: filename) else {
+                        return nil
+                    }
                     return PhotoListItem(image: image, name: photo.wrappedName)
                 } ?? []
         }

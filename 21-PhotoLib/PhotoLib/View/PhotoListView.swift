@@ -34,14 +34,17 @@ struct PhotoListView: View {
                 .onDelete() { offsets in viewModel.delete(at: offsets) }
             }
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    EditButton()
+                if !viewModel.items.isEmpty {
+                    ToolbarItem(placement: .topBarLeading) {
+                        EditButton()
+                    }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("", systemImage: "plus") {
                         viewModel.presentingPhotoPickingFlow = true
                     }
                 }
+
             }
             .navigationTitle("Photos")
             .sheet(isPresented: $viewModel.presentingPhotoPickingFlow) {

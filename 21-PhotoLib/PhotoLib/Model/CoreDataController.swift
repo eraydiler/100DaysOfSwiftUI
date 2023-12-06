@@ -11,8 +11,8 @@ class CoreDataController: ObservableObject {
     let container = NSPersistentContainer(name: "PhotoLib")
 
     init() {
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
         print(NSHomeDirectory())
+        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
         container.loadPersistentStores { description, error in
             if let error = error {
                 print("Core Data failed to load: \(error.localizedDescription)")
