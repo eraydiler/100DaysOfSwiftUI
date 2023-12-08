@@ -2,14 +2,12 @@
 //  Photo+CoreDataProperties.swift
 //  
 //
-//  Created by Eray Diler on 3.12.2023.
+//  Created by Eray Diler on 7.12.2023.
 //
 //
 
 import Foundation
 import CoreData
-import UIKit
-
 
 extension Photo {
 
@@ -19,12 +17,14 @@ extension Photo {
 
     @NSManaged public var imageFilename: UUID?
     @NSManaged public var name: String?
+    @NSManaged public var latitude: Double
+    @NSManaged public var longitude: Double
 
-}
-
-extension Photo: Identifiable {
 }
 
 extension Photo {
     var wrappedName: String { name ?? "No name"}
+    var location: Location {
+        Location(latitude: latitude, longitude: longitude)
+    }
 }

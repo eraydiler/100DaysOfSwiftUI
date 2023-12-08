@@ -5,11 +5,13 @@
 //  Created by Eray Diler on 3.12.2023.
 //
 
+import MapKit
 import SwiftUI
 
 struct PhotoDetailView: View {
     let image: Image
     let name: String
+    let location: Location?
 
     var body: some View {
         NavigationStack {
@@ -28,6 +30,14 @@ struct PhotoDetailView: View {
                         Text(name)
                             .font(.headline)
                             .padding(.top)
+
+                        if let location = location, location.isAvailable {
+                            NavigationLink {
+                                LocationDetailView(location: location)
+                            } label: {
+                                Text("Location")
+                            }
+                        }
                     }
                     .padding([.horizontal, .vertical])
                 }

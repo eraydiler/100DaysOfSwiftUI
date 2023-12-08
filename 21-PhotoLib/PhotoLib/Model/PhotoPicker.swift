@@ -5,10 +5,11 @@
 //  Created by Eray Diler on 21.11.2023.
 //
 
+import MobileCoreServices
 import PhotosUI
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct CameraImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     private var didFinishPicking: () -> ()
     private var didCancel: () -> ()
@@ -23,16 +24,14 @@ struct ImagePicker: UIViewControllerRepresentable {
         self.didCancel = didCancel
     }
 
-    func makeUIViewController(context: Context) -> PHPickerViewController {
-        var config = PHPickerConfiguration()
-        config.filter = .images
-
-        let picker = PHPickerViewController(configuration: config)
-        picker.delegate = context.coordinator
-        return picker
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let controller = UIImagePickerController()
+        controller.sourceType = .camera
+        controller.delegate = context.coordinator
+        return controller
     }
 
-    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
     }
 
     func makeCoordinator() -> Coordinator {
@@ -40,35 +39,36 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 }
 
-extension ImagePicker {
-    class Coordinator: PHPickerViewControllerDelegate {
-        var parent: ImagePicker
+extension CameraImagePicker {
+    class Coordinator: NSObject, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+        var parent: CameraImagePicker
 
-        init(parent: ImagePicker) {
+        init(parent: CameraImagePicker) {
             self.parent = parent
         }
 
-        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            // Cancel
-            if results.isEmpty {
-                self.parent.didCancel()
+        func imagePickerController(
+            _ picker: UIImagePickerController,
+            didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+        ) {
+            guard
+                let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String,
+                mediaType == UTType.image.identifier,
+                let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            else {
+                print("Failed to pick image")
                 return
             }
 
-            // Exit if no selection was made
-            guard let provider = results.first?.itemProvider else { 
-                return
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.parent.image = image
+                self.parent.didFinishPicking()
             }
+        }
 
-            // If this has an image we can use, use it
-            if provider.canLoadObject(ofClass: UIImage.self) {
-                provider.loadObject(ofClass: UIImage.self) { image, _ in
-                    DispatchQueue.main.async {
-                        self.parent.image = image as? UIImage
-                        self.parent.didFinishPicking()
-                    }
-                }
-            }
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            self.parent.didCancel()
         }
     }
 }

@@ -26,7 +26,11 @@ struct PhotoListView: View {
             List {
                 ForEach(viewModel.items) { item in
                     NavigationLink {
-                        PhotoDetailView(image: Image(uiImage: item.image), name: item.name)
+                        PhotoDetailView(
+                            image: Image(uiImage: item.image),
+                            name: item.name,
+                            location: item.location
+                        )
                     } label: {
                         PhotoRow(item: item)
                     }
@@ -44,17 +48,15 @@ struct PhotoListView: View {
                         viewModel.presentingPhotoPickingFlow = true
                     }
                 }
-
             }
             .navigationTitle("Photos")
             .sheet(isPresented: $viewModel.presentingPhotoPickingFlow) {
                 PhotoPickerView(
-                    inputImage: $viewModel.inputImage,
-                    inputName: $viewModel.inputName,
+                    image: $viewModel.inputImage,
+                    location: $viewModel.location,
+                    name: $viewModel.inputName,
                     didFinishFlow: {
-                        viewModel.presentingPhotoPickingFlow = false
-                        viewModel.savePhoto()
-                        viewModel.resetInputs()
+                        viewModel.performPostPhotoPickingOperations()
                     },
                     didCancel: {
                         viewModel.presentingPhotoPickingFlow = false
@@ -89,12 +91,10 @@ fileprivate extension PhotoListView {
     }
 }
 
-struct PhotoListItem: Identifiable {
-    var id: String { name }
-    var image: UIImage
-    var name: String
-}
+#Preview {
+    @StateObject var coreDataController = CoreDataController()
 
-//#Preview {
-//    PhotoListView()
-//}
+    return PhotoListView(
+        viewModel: PhotoListView.ViewModel(context: coreDataController.container.viewContext)
+    )
+}

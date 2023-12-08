@@ -11,9 +11,10 @@ import UIKit
 extension PhotoListView {
     @MainActor
     class ViewModel: NSObject, ObservableObject {
-        @Published var items: [PhotoListItem] = []
+        @Published private(set) var items: [PhotoListItem] = []
         @Published var presentingPhotoPickingFlow = false
         @Published var inputImage: UIImage?
+        @Published var location: Location?
         @Published var inputName: String = ""
 
         private let fetchedResultsController: NSFetchedResultsController<Photo>
@@ -45,7 +46,7 @@ extension PhotoListView {
             updateItems()
         }
 
-        func savePhoto() {
+        private func savePhoto() {
             guard let image = inputImage else {
                 return
             }
@@ -59,6 +60,10 @@ extension PhotoListView {
             let photo = Photo(context: moc)
             photo.name = inputName
             photo.imageFilename = filename
+            if let latitude = location?.latitude, let longitude = location?.longitude {
+                photo.latitude = latitude
+                photo.longitude = longitude
+            }
             try? moc.save()
         }
 
@@ -93,6 +98,12 @@ extension PhotoListView {
                 try? moc.save()
             }
         }
+        
+        func performPostPhotoPickingOperations() {
+            presentingPhotoPickingFlow = false
+            savePhoto()
+            resetInputs()
+        }
 
         private func updateItems() {
             items = fetchedResultsController
@@ -102,11 +113,11 @@ extension PhotoListView {
                     guard let image = FileManager.default.getImage(fromFile: filename) else {
                         return nil
                     }
-                    return PhotoListItem(image: image, name: photo.wrappedName)
+                    return PhotoListItem(image: image, name: photo.wrappedName, location: photo.location)
                 } ?? []
         }
 
-        func resetInputs() {
+        private func resetInputs() {
             inputName = ""
             inputImage = nil
         }

@@ -8,30 +8,38 @@
 import SwiftUI
 
 struct PhotoPickerView: View {
-    @Binding private var inputImage: UIImage?
-    @Binding private var inputName: String
+    @Binding private var image: UIImage?
+    @Binding private var location: Location?
+    @Binding private var name: String
     @State private var isPresentedDestinationView = false
     private var didFinishFlow: () -> Void
     private var didCancel: () -> Void
+    private let locationFetcher = LocationFetcher()
 
     init(
-        inputImage: Binding<UIImage?>,
-        inputName: Binding<String>,
+        image: Binding<UIImage?>,
+        location: Binding<Location?>,
+        name: Binding<String>,
         didFinishFlow: @escaping () -> Void,
         didCancel: @escaping () -> Void
     ) {
-        _inputImage = inputImage
-        _inputName = inputName
+        _image = image
+        _location = location
+        _name = name
         self.didFinishFlow = didFinishFlow
         self.didCancel = didCancel
+        locationFetcher.start()
     }
 
     var body: some View {
         NavigationStack {
             VStack {
-                ImagePicker(
-                    image: $inputImage,
-                    didFinishPicking: { isPresentedDestinationView = true },
+                CameraImagePicker(
+                    image: $image,
+                    didFinishPicking: {
+                        location = locationFetcher.lastKnownLocation
+                        isPresentedDestinationView = true
+                    },
                     didCancel: { didCancel() }
                 )
                 .navigationBarTitleDisplayMode(.inline)
@@ -40,7 +48,7 @@ struct PhotoPickerView: View {
                     isPresented: $isPresentedDestinationView,
                     destination: {
                         NameInputView(
-                            inputName: $inputName,
+                            inputName: $name,
                             didFinish: didFinishFlow
                         )
                     }
