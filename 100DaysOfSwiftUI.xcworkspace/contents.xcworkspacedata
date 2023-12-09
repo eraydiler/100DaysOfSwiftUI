@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:22-HotProspects/HotProspects.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:21-PhotoLib/PhotoLib.xcodeproj">
    </FileRef>
    <FileRef
