@@ -7,18 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F96DA5562B25F5D000ED2E61 /* ManualPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5552B25F5D000ED2E61 /* ManualPublishing.swift */; };
+		F96DA5582B25F98400ED2E61 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5572B25F98400ED2E61 /* ResultType.swift */; };
+		F96DA55A2B25FB6D00ED2E61 /* ImageInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5592B25FB6D00ED2E61 /* ImageInterpolation.swift */; };
+		F96DA55C2B26191300ED2E61 /* ContextMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA55B2B26191300ED2E61 /* ContextMenus.swift */; };
+		F96DA55E2B261AA700ED2E61 /* CustomSwipeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA55D2B261AA700ED2E61 /* CustomSwipeActions.swift */; };
+		F96DA5602B261DB600ED2E61 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA55F2B261DB600ED2E61 /* LocalNotifications.swift */; };
+		F96DA5622B26223D00ED2E61 /* SwiftPackageDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5612B26223D00ED2E61 /* SwiftPackageDependencies.swift */; };
+		F96DA5652B26226E00ED2E61 /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = F96DA5642B26226E00ED2E61 /* SamplePackage */; };
 		F986F4A02B24963500763365 /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986F49F2B24963500763365 /* HotProspectsApp.swift */; };
 		F986F4A22B24963500763365 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986F4A12B24963500763365 /* ContentView.swift */; };
 		F986F4A42B24963600763365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F986F4A32B24963600763365 /* Assets.xcassets */; };
 		F986F4A72B24963600763365 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F986F4A62B24963600763365 /* Preview Assets.xcassets */; };
+		F986F4AF2B249BF700763365 /* EnvironmentObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986F4AE2B249BF700763365 /* EnvironmentObjects.swift */; };
+		F986F4B12B249CD500763365 /* CreatingTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986F4B02B249CD500763365 /* CreatingTabs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F96DA5552B25F5D000ED2E61 /* ManualPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualPublishing.swift; sourceTree = "<group>"; };
+		F96DA5572B25F98400ED2E61 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		F96DA5592B25FB6D00ED2E61 /* ImageInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInterpolation.swift; sourceTree = "<group>"; };
+		F96DA55B2B26191300ED2E61 /* ContextMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenus.swift; sourceTree = "<group>"; };
+		F96DA55D2B261AA700ED2E61 /* CustomSwipeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwipeActions.swift; sourceTree = "<group>"; };
+		F96DA55F2B261DB600ED2E61 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		F96DA5612B26223D00ED2E61 /* SwiftPackageDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPackageDependencies.swift; sourceTree = "<group>"; };
 		F986F49C2B24963500763365 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F986F49F2B24963500763365 /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
 		F986F4A12B24963500763365 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F986F4A32B24963600763365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F986F4A62B24963600763365 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F986F4AE2B249BF700763365 /* EnvironmentObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjects.swift; sourceTree = "<group>"; };
+		F986F4B02B249CD500763365 /* CreatingTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingTabs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96DA5652B26226E00ED2E61 /* SamplePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,6 +55,7 @@
 		F986F4932B24963500763365 = {
 			isa = PBXGroup;
 			children = (
+				F986F4AD2B249BE200763365 /* Practices */,
 				F986F49E2B24963500763365 /* HotProspects */,
 				F986F49D2B24963500763365 /* Products */,
 			);
@@ -67,6 +88,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F986F4AD2B249BE200763365 /* Practices */ = {
+			isa = PBXGroup;
+			children = (
+				F986F4AE2B249BF700763365 /* EnvironmentObjects.swift */,
+				F986F4B02B249CD500763365 /* CreatingTabs.swift */,
+				F96DA5552B25F5D000ED2E61 /* ManualPublishing.swift */,
+				F96DA5572B25F98400ED2E61 /* ResultType.swift */,
+				F96DA5592B25FB6D00ED2E61 /* ImageInterpolation.swift */,
+				F96DA55B2B26191300ED2E61 /* ContextMenus.swift */,
+				F96DA55D2B261AA700ED2E61 /* CustomSwipeActions.swift */,
+				F96DA55F2B261DB600ED2E61 /* LocalNotifications.swift */,
+				F96DA5612B26223D00ED2E61 /* SwiftPackageDependencies.swift */,
+			);
+			path = Practices;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +120,9 @@
 			dependencies = (
 			);
 			name = HotProspects;
+			packageProductDependencies = (
+				F96DA5642B26226E00ED2E61 /* SamplePackage */,
+			);
 			productName = HotProspects;
 			productReference = F986F49C2B24963500763365 /* HotProspects.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +151,9 @@
 				Base,
 			);
 			mainGroup = F986F4932B24963500763365;
+			packageReferences = (
+				F96DA5632B26226E00ED2E61 /* XCRemoteSwiftPackageReference "SamplePackage" */,
+			);
 			productRefGroup = F986F49D2B24963500763365 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +180,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96DA5622B26223D00ED2E61 /* SwiftPackageDependencies.swift in Sources */,
+				F986F4B12B249CD500763365 /* CreatingTabs.swift in Sources */,
+				F986F4AF2B249BF700763365 /* EnvironmentObjects.swift in Sources */,
+				F96DA55C2B26191300ED2E61 /* ContextMenus.swift in Sources */,
 				F986F4A22B24963500763365 /* ContentView.swift in Sources */,
+				F96DA5562B25F5D000ED2E61 /* ManualPublishing.swift in Sources */,
+				F96DA55A2B25FB6D00ED2E61 /* ImageInterpolation.swift in Sources */,
+				F96DA5582B25F98400ED2E61 /* ResultType.swift in Sources */,
+				F96DA55E2B261AA700ED2E61 /* CustomSwipeActions.swift in Sources */,
+				F96DA5602B261DB600ED2E61 /* LocalNotifications.swift in Sources */,
 				F986F4A02B24963500763365 /* HotProspectsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +396,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F96DA5632B26226E00ED2E61 /* XCRemoteSwiftPackageReference "SamplePackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/SamplePackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F96DA5642B26226E00ED2E61 /* SamplePackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F96DA5632B26226E00ED2E61 /* XCRemoteSwiftPackageReference "SamplePackage" */;
+			productName = SamplePackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F986F4942B24963500763365 /* Project object */;
 }
