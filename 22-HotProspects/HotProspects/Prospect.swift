@@ -8,15 +8,20 @@
 import Foundation
 
 class Prospect: Identifiable, Codable {
-    var id = UUID()
+    private(set) var id = UUID()
     var name = "Anonymous"
     var emailAddress = ""
     fileprivate(set) var isContacted = false
+    private(set) var creationDate = Date()
 }
 
 @MainActor class Prospects: ObservableObject {
     @Published private(set) var people: [Prospect]
-    private let store = Store()
+    private let store = FileStore(key: "Prospects")
+
+    enum SortType {
+        case name, recent
+    }
 
     init() {
         people = store.fetcth() ?? []
@@ -33,13 +38,18 @@ class Prospect: Identifiable, Codable {
         save()
     }
 
+    func sortBy(_ type: SortType) {
+        objectWillChange.send()
+
+        switch type {
+        case .name:
+            people.sort { $0.name < $1.name }
+        case .recent:
+            people.sort { $0.creationDate < $1.creationDate }
+        }
+    }
+
     private func save() {
         store.set(value: people)
-    }
-}
-
-extension Prospects {
-    fileprivate struct Store: UserDefaultsStore {
-        var key: String { "com.hotprospects.prospects" }
     }
 }

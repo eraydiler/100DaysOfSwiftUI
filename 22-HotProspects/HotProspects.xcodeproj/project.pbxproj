@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F93239362B28A2DF00470751 /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93239352B28A2DF00470751 /* UserDefaultsStore.swift */; };
+		F93239362B28A2DF00470751 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93239352B28A2DF00470751 /* Store.swift */; };
 		F93239382B28C6A700470751 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93239372B28C6A700470751 /* ImageSaver.swift */; };
+		F94B7B5F2B2CFEDD00A3A66F /* FileManager+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B7B5E2B2CFEDD00A3A66F /* FileManager+Codable.swift */; };
 		F96DA5562B25F5D000ED2E61 /* ManualPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5552B25F5D000ED2E61 /* ManualPublishing.swift */; };
 		F96DA5582B25F98400ED2E61 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5572B25F98400ED2E61 /* ResultType.swift */; };
 		F96DA55A2B25FB6D00ED2E61 /* ImageInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5592B25FB6D00ED2E61 /* ImageInterpolation.swift */; };
@@ -30,8 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F93239352B28A2DF00470751 /* UserDefaultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStore.swift; sourceTree = "<group>"; };
+		F93239352B28A2DF00470751 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F93239372B28C6A700470751 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		F94B7B5E2B2CFEDD00A3A66F /* FileManager+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Codable.swift"; sourceTree = "<group>"; };
 		F96DA5552B25F5D000ED2E61 /* ManualPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualPublishing.swift; sourceTree = "<group>"; };
 		F96DA5572B25F98400ED2E61 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		F96DA5592B25FB6D00ED2E61 /* ImageInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInterpolation.swift; sourceTree = "<group>"; };
@@ -89,7 +91,8 @@
 				F96DA5662B26408A00ED2E61 /* ProspectsView.swift */,
 				F96DA5682B2640D600ED2E61 /* MeView.swift */,
 				F96DA56A2B2644A400ED2E61 /* Prospect.swift */,
-				F93239352B28A2DF00470751 /* UserDefaultsStore.swift */,
+				F93239352B28A2DF00470751 /* Store.swift */,
+				F94B7B5E2B2CFEDD00A3A66F /* FileManager+Codable.swift */,
 				F986F4A32B24963600763365 /* Assets.xcassets */,
 				F986F4A52B24963600763365 /* Preview Content */,
 				F93239372B28C6A700470751 /* ImageSaver.swift */,
@@ -208,9 +211,10 @@
 				F986F4A22B24963500763365 /* ContentView.swift in Sources */,
 				F96DA5562B25F5D000ED2E61 /* ManualPublishing.swift in Sources */,
 				F96DA55A2B25FB6D00ED2E61 /* ImageInterpolation.swift in Sources */,
+				F94B7B5F2B2CFEDD00A3A66F /* FileManager+Codable.swift in Sources */,
 				F96DA5582B25F98400ED2E61 /* ResultType.swift in Sources */,
 				F96DA55E2B261AA700ED2E61 /* CustomSwipeActions.swift in Sources */,
-				F93239362B28A2DF00470751 /* UserDefaultsStore.swift in Sources */,
+				F93239362B28A2DF00470751 /* Store.swift in Sources */,
 				F96DA5602B261DB600ED2E61 /* LocalNotifications.swift in Sources */,
 				F986F4A02B24963500763365 /* HotProspectsApp.swift in Sources */,
 				F96DA5692B2640D600ED2E61 /* MeView.swift in Sources */,

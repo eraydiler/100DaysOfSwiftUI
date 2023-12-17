@@ -44,16 +44,29 @@ struct ProspectsView: View {
     // If it isn’t present, your app will crash immediately.
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
+    @State private var isShowingSortByDialog = false
 
     var body: some View {
         NavigationView {
             List {
                 ForEach(filteredProspects) { prospect in
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        Text(prospect.emailAddress)
-                            .foregroundColor(.secondary)
+                    HStack {
+                        if filter == .none {
+                            Image(
+                                systemName: prospect.isContacted
+                                ? "person.crop.circle.badge.checkmark"
+                                : "person.crop.circle.badge.xmark"
+                            )
+                            .foregroundStyle(prospect.isContacted ? .green : .blue)
+                        }
+                        VStack(alignment: .leading) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            Text(prospect.emailAddress)
+                                .foregroundColor(.secondary)
+                            Text(prospect.creationDate.formatted())
+                                .foregroundColor(.secondary)
+                        }
                     }
                     .swipeActions {
                         if prospect.isContacted {
@@ -80,9 +93,14 @@ struct ProspectsView: View {
                         }
                     }
                 }
-            }          
+            }
             .navigationTitle(title)
             .toolbar {
+                Button {
+                    isShowingSortByDialog = true
+                } label: {
+                    Label("Sort", systemImage: "chevron.up.chevron.down")
+                }
                 Button {
                     isShowingScanner = true
                 } label: {
@@ -96,6 +114,12 @@ struct ProspectsView: View {
                     completion: handleScan
                 )
             }
+            .confirmationDialog(
+                "Sort by",
+                isPresented: $isShowingSortByDialog) {
+                    Button("Name") { prospects.sortBy(.name) }
+                    Button("Most recent") { prospects.sortBy(.recent) }
+                }
         }
     }
 
@@ -111,6 +135,7 @@ struct ProspectsView: View {
             person.name = details[0]
             person.emailAddress = details[1]
             prospects.add(person)
+            
         case .failure(let error):
             print("Scanning failed: \(error.localizedDescription)")
         }
@@ -127,10 +152,15 @@ struct ProspectsView: View {
 
             var dateComponents = DateComponents()
             dateComponents.hour = 9
-//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            let trigger = UNCalendarNotificationTrigger(
+                dateMatching: dateComponents,
+                repeats: false
+            )
+            let request = UNNotificationRequest(
+                identifier: UUID().uuidString,
+                content: content,
+                trigger: trigger
+            )
             center.add(request)
         }
 
