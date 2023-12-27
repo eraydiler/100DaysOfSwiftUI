@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:24-LayoutAndGeometry/LayoutAndGeometry.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:23-Flashzilla/Flashzilla.xcodeproj">
    </FileRef>
    <FileRef
