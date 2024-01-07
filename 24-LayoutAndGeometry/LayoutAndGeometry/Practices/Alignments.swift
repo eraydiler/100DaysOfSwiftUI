@@ -34,7 +34,7 @@ struct AlignmentsView: View {
                     .font(.largeTitle)
             }
             // 4
-            HStack(alignment: .lastTextBaseline) {            Text("Live")
+            HStack(alignment: .firstTextBaseline) {            Text("Live")
                     .font(.caption)
                 Text("long")
                 Text("and")

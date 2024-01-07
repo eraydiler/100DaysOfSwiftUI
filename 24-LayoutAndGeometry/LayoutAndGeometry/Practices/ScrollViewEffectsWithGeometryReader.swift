@@ -51,7 +51,7 @@ fileprivate struct Example2View: View {
 struct ScrollViewEffectsWithGeometryReaderView: View {
     var body: some View {
         Example1View()
-        Example2View()
+//        Example2View()
     }
 }
 

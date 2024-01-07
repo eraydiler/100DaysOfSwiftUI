@@ -52,9 +52,24 @@ fileprivate struct Example3View: View {
                     Text("Center")
                         .background(.blue)
                         .onTapGesture {
-                            print("Global center: \(geo.frame(in: .global).midX) x \(geo.frame(in: .global).midY)")
-                            print("Custom center: \(geo.frame(in: .named("Custom")).midX) x \(geo.frame(in: .named("Custom")).midY)")
-                            print("Local center: \(geo.frame(in: .local).midX) x \(geo.frame(in: .local).midY)")
+//                            print(
+//                                "Global center: \(geo.frame(in: .global).midX) x \(geo.frame(in: .global).midY)"
+//                            )
+//                            print(
+//                                "Local center: \(geo.frame(in: .local).midX) x \(geo.frame(in: .local).midY)"
+//                            )
+//                            print(
+//                                "Custom center: \(geo.frame(in: .named("Custom")).midX) x \(geo.frame(in: .named("Custom")).midY)"
+//                            )
+                            print(
+                                "Global frame: \(geo.frame(in: .global).size.width) x \(geo.frame(in: .global).size.height)"
+                            )
+                            print(
+                                "Local frame: \(geo.frame(in: .local).size.width) x \(geo.frame(in: .local).size.height)"
+                            )
+                            print(
+                                "Custom frame: \(geo.frame(in: .named("Custom")).size.width) x \(geo.frame(in: .named("Custom")).size.height)"
+                            )
                         }
                 }
                 .background(.orange)
@@ -64,12 +79,17 @@ fileprivate struct Example3View: View {
     }
 
     var body: some View {
-        OuterView()
-            .background(.red)
-            .coordinateSpace(name: "Custom")
+        GeometryReader { geo in
+            OuterView()
+                .background(.red)
+                .coordinateSpace(name: "Custom")
+            let _ = print(
+                "Global frame: \(geo.frame(in: .global).size.width) x \(geo.frame(in: .global).size.height)"
+            )
+
+        }
     }
 }
-
 
 struct FramesCoordinatesInGeometryReaderView: View {
     var body: some View {
