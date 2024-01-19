@@ -14,7 +14,7 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Picker("Number of dices", selection: $numberOfItems) {
-                ForEach([1, 2], id: \.self) {
+                ForEach(1...6, id: \.self) {
                     Text($0, format: .number)
                 }
             }

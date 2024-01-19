@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Dice {
+struct Dice: Codable {
     let sides: [Int]
     private(set) var topSide: Int
 
@@ -48,6 +48,12 @@ struct Dice {
 
         for i in 0..<items.count {
             items[i].roll()
+        }
+    }
+
+    var total: Int {
+        items.reduce(0) { partialResult, dice in
+            partialResult + dice.topSide
         }
     }
 }

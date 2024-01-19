@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:Shared Files"
+      name = "Shared Files">
+      <FileRef
+         location = "group:FileManager+Codable.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Store.swift">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:25-DiceRoller/DiceRoller.xcodeproj">
    </FileRef>

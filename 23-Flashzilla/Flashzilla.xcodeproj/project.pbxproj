@@ -16,12 +16,12 @@
 		F977C4ED2B30D109008CA993 /* Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F977C4EC2B30D109008CA993 /* Gestures.swift */; };
 		F977C4EF2B30D4C3008CA993 /* HapticEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F977C4EE2B30D4C3008CA993 /* HapticEffects.swift */; };
 		F977C4F12B30DDE2008CA993 /* HitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F977C4F02B30DDE2008CA993 /* HitTesting.swift */; };
-		F98527F32B39D1600056D24D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98527F22B39D1600056D24D /* Store.swift */; };
-		F98527F52B39D1A90056D24D /* FileManager+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98527F42B39D1A90056D24D /* FileManager+Codable.swift */; };
 		F9AFF9C32B2F509A002AC1C8 /* FlashzillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AFF9C22B2F509A002AC1C8 /* FlashzillaApp.swift */; };
 		F9AFF9C52B2F509A002AC1C8 /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AFF9C42B2F509A002AC1C8 /* CardStackView.swift */; };
 		F9AFF9C72B2F509B002AC1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9AFF9C62B2F509B002AC1C8 /* Assets.xcassets */; };
 		F9AFF9CA2B2F509B002AC1C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9AFF9C92B2F509B002AC1C8 /* Preview Assets.xcassets */; };
+		F9B3838D2B5ACA6A006DBC3F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3838B2B5ACA6A006DBC3F /* Store.swift */; };
+		F9B3838E2B5ACA6A006DBC3F /* FileManager+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3838C2B5ACA6A006DBC3F /* FileManager+Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,13 +34,13 @@
 		F977C4EC2B30D109008CA993 /* Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestures.swift; sourceTree = "<group>"; };
 		F977C4EE2B30D4C3008CA993 /* HapticEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEffects.swift; sourceTree = "<group>"; };
 		F977C4F02B30DDE2008CA993 /* HitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTesting.swift; sourceTree = "<group>"; };
-		F98527F22B39D1600056D24D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		F98527F42B39D1A90056D24D /* FileManager+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Codable.swift"; sourceTree = "<group>"; };
 		F9AFF9BF2B2F509A002AC1C8 /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9AFF9C22B2F509A002AC1C8 /* FlashzillaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashzillaApp.swift; sourceTree = "<group>"; };
 		F9AFF9C42B2F509A002AC1C8 /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
 		F9AFF9C62B2F509B002AC1C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9AFF9C92B2F509B002AC1C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F9B3838B2B5ACA6A006DBC3F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Store.swift; path = "../../Shared Files/Store.swift"; sourceTree = "<group>"; };
+		F9B3838C2B5ACA6A006DBC3F /* FileManager+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FileManager+Codable.swift"; path = "../../Shared Files/FileManager+Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +94,8 @@
 				F970CADD2B375E28000B25DC /* CardStackEditView.swift */,
 				F9715EFE2B336CAF0053CF6F /* CardView.swift */,
 				F9715EFC2B336C530053CF6F /* Card.swift */,
-				F98527F22B39D1600056D24D /* Store.swift */,
-				F98527F42B39D1A90056D24D /* FileManager+Codable.swift */,
+				F9B3838C2B5ACA6A006DBC3F /* FileManager+Codable.swift */,
+				F9B3838B2B5ACA6A006DBC3F /* Store.swift */,
 			);
 			path = Flashzilla;
 			sourceTree = "<group>";
@@ -178,11 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B3838D2B5ACA6A006DBC3F /* Store.swift in Sources */,
+				F9B3838E2B5ACA6A006DBC3F /* FileManager+Codable.swift in Sources */,
 				F9159D982B31E9E900CE4DF4 /* SpecificAccessibilitySupport.swift in Sources */,
 				F9715EFD2B336C530053CF6F /* Card.swift in Sources */,
-				F98527F52B39D1A90056D24D /* FileManager+Codable.swift in Sources */,
 				F970CADE2B375E28000B25DC /* CardStackEditView.swift in Sources */,
-				F98527F32B39D1600056D24D /* Store.swift in Sources */,
 				F977C4ED2B30D109008CA993 /* Gestures.swift in Sources */,
 				F9159D942B31D28F00CE4DF4 /* Timers.swift in Sources */,
 				F9715EFF2B336CAF0053CF6F /* CardView.swift in Sources */,

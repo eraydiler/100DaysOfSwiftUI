@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F93239362B28A2DF00470751 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93239352B28A2DF00470751 /* Store.swift */; };
 		F93239382B28C6A700470751 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93239372B28C6A700470751 /* ImageSaver.swift */; };
-		F94B7B5F2B2CFEDD00A3A66F /* FileManager+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B7B5E2B2CFEDD00A3A66F /* FileManager+Codable.swift */; };
 		F96DA5562B25F5D000ED2E61 /* ManualPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5552B25F5D000ED2E61 /* ManualPublishing.swift */; };
 		F96DA5582B25F98400ED2E61 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5572B25F98400ED2E61 /* ResultType.swift */; };
 		F96DA55A2B25FB6D00ED2E61 /* ImageInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5592B25FB6D00ED2E61 /* ImageInterpolation.swift */; };
@@ -27,13 +25,13 @@
 		F986F4A72B24963600763365 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F986F4A62B24963600763365 /* Preview Assets.xcassets */; };
 		F986F4AF2B249BF700763365 /* EnvironmentObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986F4AE2B249BF700763365 /* EnvironmentObjects.swift */; };
 		F986F4B12B249CD500763365 /* CreatingTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986F4B02B249CD500763365 /* CreatingTabs.swift */; };
+		F9B383952B5ACB56006DBC3F /* FileManager+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B383932B5ACB55006DBC3F /* FileManager+Codable.swift */; };
+		F9B383962B5ACB56006DBC3F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B383942B5ACB55006DBC3F /* Store.swift */; };
 		F9E253AE2B278297008D279C /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F9E253AD2B278297008D279C /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F93239352B28A2DF00470751 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F93239372B28C6A700470751 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
-		F94B7B5E2B2CFEDD00A3A66F /* FileManager+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Codable.swift"; sourceTree = "<group>"; };
 		F96DA5552B25F5D000ED2E61 /* ManualPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualPublishing.swift; sourceTree = "<group>"; };
 		F96DA5572B25F98400ED2E61 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		F96DA5592B25FB6D00ED2E61 /* ImageInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInterpolation.swift; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		F986F4A62B24963600763365 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F986F4AE2B249BF700763365 /* EnvironmentObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjects.swift; sourceTree = "<group>"; };
 		F986F4B02B249CD500763365 /* CreatingTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingTabs.swift; sourceTree = "<group>"; };
+		F9B383932B5ACB55006DBC3F /* FileManager+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FileManager+Codable.swift"; path = "../../Shared Files/FileManager+Codable.swift"; sourceTree = "<group>"; };
+		F9B383942B5ACB55006DBC3F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Store.swift; path = "../../Shared Files/Store.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +91,11 @@
 				F96DA5662B26408A00ED2E61 /* ProspectsView.swift */,
 				F96DA5682B2640D600ED2E61 /* MeView.swift */,
 				F96DA56A2B2644A400ED2E61 /* Prospect.swift */,
-				F93239352B28A2DF00470751 /* Store.swift */,
-				F94B7B5E2B2CFEDD00A3A66F /* FileManager+Codable.swift */,
 				F986F4A32B24963600763365 /* Assets.xcassets */,
 				F986F4A52B24963600763365 /* Preview Content */,
 				F93239372B28C6A700470751 /* ImageSaver.swift */,
+				F9B383932B5ACB55006DBC3F /* FileManager+Codable.swift */,
+				F9B383942B5ACB55006DBC3F /* Store.swift */,
 			);
 			path = HotProspects;
 			sourceTree = "<group>";
@@ -202,6 +202,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B383952B5ACB56006DBC3F /* FileManager+Codable.swift in Sources */,
+				F9B383962B5ACB56006DBC3F /* Store.swift in Sources */,
 				F96DA5672B26408A00ED2E61 /* ProspectsView.swift in Sources */,
 				F96DA5622B26223D00ED2E61 /* SwiftPackageDependencies.swift in Sources */,
 				F986F4B12B249CD500763365 /* CreatingTabs.swift in Sources */,
@@ -211,10 +213,8 @@
 				F986F4A22B24963500763365 /* ContentView.swift in Sources */,
 				F96DA5562B25F5D000ED2E61 /* ManualPublishing.swift in Sources */,
 				F96DA55A2B25FB6D00ED2E61 /* ImageInterpolation.swift in Sources */,
-				F94B7B5F2B2CFEDD00A3A66F /* FileManager+Codable.swift in Sources */,
 				F96DA5582B25F98400ED2E61 /* ResultType.swift in Sources */,
 				F96DA55E2B261AA700ED2E61 /* CustomSwipeActions.swift in Sources */,
-				F93239362B28A2DF00470751 /* Store.swift in Sources */,
 				F96DA5602B261DB600ED2E61 /* LocalNotifications.swift in Sources */,
 				F986F4A02B24963500763365 /* HotProspectsApp.swift in Sources */,
 				F96DA5692B2640D600ED2E61 /* MeView.swift in Sources */,
