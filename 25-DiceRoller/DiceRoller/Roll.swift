@@ -23,7 +23,7 @@ struct Roll: Codable, Identifiable {
     }
 
     func add(_ roll: Roll) {
-        items.append(roll)
+        items.insert(roll, at: 0)
         save()
     }
 

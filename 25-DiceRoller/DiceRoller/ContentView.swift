@@ -17,14 +17,23 @@ struct ContentView: View {
         in: .common
     )
     @State private var timerSubscription: Cancellable?
-
     @ObservedObject private var rollCollection = RollCollection()
-    @ObservedObject private var diceCollection: DiceCollection = DiceCollection(
-        numberOfItems: 6,
-        numberOfSides: 6
-    )
-
+    @ObservedObject private var diceCollection: DiceCollection 
     @State private var isFirstRollMade = false
+
+    @Binding private var numberOfItems: Int
+    @Binding private var numberOfSides: Int
+
+    init(numberOfItems: Binding<Int>, numberOfSides: Binding<Int>) {
+        _numberOfItems = numberOfItems
+        _numberOfSides = numberOfSides
+        _diceCollection = ObservedObject(
+            initialValue: DiceCollection(
+                numberOfItems: numberOfItems.wrappedValue,
+                numberOfSides: numberOfSides.wrappedValue
+            )
+        )
+    }
 
     var body: some View {
         NavigationStack {
@@ -36,7 +45,7 @@ struct ContentView: View {
                         let dice = diceCollection.items[index]
 
                         VStack {
-                            Text("Dice\(index + 1)")
+                            Text("🎲")
                                 .font(.title3)
                                 .bold()
                             Text(isFirstRollMade ? "\(dice.topSide)" : "-")
@@ -46,40 +55,44 @@ struct ContentView: View {
                 }
 
                 VStack {
-                    Text("Total")
+                    Text("∑")
                         .font(.title2)
                         .bold()
                     Text(timeRemaining == 0 ? (isFirstRollMade ? "\(diceCollection.total)" : "-") : "-")
                         .font(.title3)
                 }.padding()
 
-                List(rollCollection.items) { roll in
-                    HStack {
-                        VStack {
-                            Text("Sides")
-                            Text(roll.sides, format: .number)
-                        }
-                        Spacer()
-                        ForEach(0..<roll.dices.count, id: \.self) { index in
-                            let dice = roll.dices[index]
-
+                Section(rollCollection.items.isEmpty ? "" : "Previous rolls") {
+                    List(rollCollection.items) { roll in
+                        HStack {
                             VStack {
-                                Text("Dice\(index + 1)")
-                                Text(dice.topSide, format: .number)
+                                Text("S")
+                                Text(roll.sides, format: .number)
+                            }
+                            Spacer()
+                            ForEach(0..<roll.dices.count, id: \.self) { index in
+                                let dice = roll.dices[index]
+
+                                VStack {
+                                    Text("🎲")
+                                    Text(dice.topSide, format: .number)
+                                }
+                            }
+                            Spacer()
+                            VStack {
+                                Text("∑")
+                                Text(roll.total, format: .number)
                             }
                         }
-                        Spacer()
-                        VStack {
-                            Text("Total")
-                            Text(roll.total, format: .number)
-                        }
+                        .font(.caption2)
                     }
-                    .font(.caption2)
                 }
+                .scrollIndicators(.hidden)
 
                 Button("Roll", action: restartTimer)
                     .font(.title)
             }
+            .sensoryFeedback(.selection, trigger: timeRemaining > 0)
             .onReceive(timer) { time in
                 if timeRemaining > 0 {
                     roll()
@@ -120,6 +133,8 @@ struct ContentView: View {
 
     private func settingsDidUpdate() {
         isFirstRollMade = false
+        numberOfItems = diceCollection.numberOfItems
+        numberOfSides = diceCollection.numberOfSides
         print("Settings update")
         print("Number Of Items: \(diceCollection.numberOfItems)")
         print("Number Of Sides: \(diceCollection.numberOfSides)")
@@ -134,5 +149,8 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(
+        numberOfItems: Binding.constant(6),
+        numberOfSides: Binding.constant(6)
+    )
 }
