@@ -83,6 +83,9 @@
       location = "container:0-Shared Files"
       name = "Shared Files">
       <FileRef
+         location = "group:ExamplesViewModifier.swift">
+      </FileRef>
+      <FileRef
          location = "group:FileManager+Codable.swift">
       </FileRef>
       <FileRef
