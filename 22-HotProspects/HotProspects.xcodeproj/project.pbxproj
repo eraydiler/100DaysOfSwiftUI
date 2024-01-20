@@ -49,8 +49,8 @@
 		F986F4A62B24963600763365 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F986F4AE2B249BF700763365 /* EnvironmentObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjects.swift; sourceTree = "<group>"; };
 		F986F4B02B249CD500763365 /* CreatingTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingTabs.swift; sourceTree = "<group>"; };
-		F9B383932B5ACB55006DBC3F /* FileManager+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FileManager+Codable.swift"; path = "../../Shared Files/FileManager+Codable.swift"; sourceTree = "<group>"; };
-		F9B383942B5ACB55006DBC3F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Store.swift; path = "../../Shared Files/Store.swift"; sourceTree = "<group>"; };
+		F9B383932B5ACB55006DBC3F /* FileManager+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FileManager+Codable.swift"; path = "../../0-Shared Files/FileManager+Codable.swift"; sourceTree = "<group>"; };
+		F9B383942B5ACB55006DBC3F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Store.swift; path = "../../0-Shared Files/Store.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

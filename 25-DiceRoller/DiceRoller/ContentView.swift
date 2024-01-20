@@ -66,7 +66,7 @@ struct ContentView: View {
                     List(rollCollection.items) { roll in
                         HStack {
                             VStack {
-                                Text("S")
+                                Text(" S ")
                                 Text(roll.sides, format: .number)
                             }
                             Spacer()
@@ -80,7 +80,7 @@ struct ContentView: View {
                             }
                             Spacer()
                             VStack {
-                                Text("∑")
+                                Text(" ∑ ")
                                 Text(roll.total, format: .number)
                             }
                         }
@@ -91,6 +91,7 @@ struct ContentView: View {
 
                 Button("Roll", action: restartTimer)
                     .font(.title)
+                    .disabled(timerSubscription != nil)
             }
             .sensoryFeedback(.selection, trigger: timeRemaining > 0)
             .onReceive(timer) { time in
@@ -99,7 +100,8 @@ struct ContentView: View {
                     timeRemaining -= 1
                 } else {
                     timerSubscription?.cancel()
-                    saveRoll()
+                    timerSubscription = nil
+                    withAnimation { saveRoll() }
                 }
             }
             .toolbar {
