@@ -23,6 +23,7 @@ struct ResortView: View {
                 Image(decorative: resort.id)
                     .resizable()
                     .scaledToFit()
+                    .watermarked(with: resort.imageCredit)
 
                 HStack {
                     if sizeClass == .compact && typeSize > .large {
@@ -81,4 +82,5 @@ struct ResortView: View {
 
 #Preview {
     ResortView(resort: Resort.example)
+        .environmentObject(Favorites())
 }
